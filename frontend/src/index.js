@@ -20,6 +20,8 @@ import { store } from './redux/store';
 import Storiespage from './pages/stories/Storiespage';
 import StoryPage from "./pages/story-page/StoryPage";
 import CreateStory from "./pages/create-story/CreateStory";
+// import StripeCheckout from "./pages/stripe-checkout/StripeCheckout";
+// import "@stripe/stripe-js"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Provider store={store}>
@@ -40,7 +42,8 @@ root.render(<Provider store={store}>
         <Route path="/validate" element={<ValidatePage />} />  
         <Route path="/verified" element={<VerifiedPage />} />     
         <Route path="/team" element={<TeamPage />} /> 
-        <Route path="/updateStock" element={<UpdateStockPage />} /> 
+        <Route path="/updateStock" element={<UpdateStockPage />} />
+        {/* <Route path="/checkout/stripe" element={<StripeCheckout />} /> */}
       </Routes>
     </BrowserRouter>
 </Provider>

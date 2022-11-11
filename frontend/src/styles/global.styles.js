@@ -29,6 +29,7 @@ export const GlobalStyle = createGlobalStyle`
         position: fixed;
         z-index: 2;
         left: .8em;
+        top: .8em;
     }
 
     .hamburger-footer {

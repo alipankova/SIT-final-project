@@ -28,6 +28,7 @@ class Product(models.Model):
     dimensions = models.CharField(max_length=250)
     stock = models.IntegerField()
     price = models.IntegerField()
+    stripe_price = models.CharField(max_length=75, blank=True)
     image = models.ImageField(blank=True, upload_to=product_image_directory_path)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

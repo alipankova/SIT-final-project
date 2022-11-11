@@ -46,8 +46,8 @@ export const StoryPageWrapper = styled.section `
 
     @media (min-width: 800px) {
         // new distance due to change of header:
-            margin-top: 7em;
-        }
+            margin: 6em 0;
+    }
     
     .search-form {
         justify-content: center;

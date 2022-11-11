@@ -3,14 +3,14 @@ import styled from "styled-components";
 
 export const NavbarWrapper = styled.nav`
     border: 1px solid #DDD8C4;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.9);
     font-size: 0.8em;
     display: flex;
     flex-direction: column;
     position: fixed;
     z-index: 1;
-    top: 4em;
-    left: 1em;
+    top: 1em;
+    left: 4em;
     padding: .5em;
     gap: 1em;
 
@@ -26,8 +26,13 @@ export const NavbarWrapper = styled.nav`
         padding: 0;
         gap: 1em;
     }
+    
+    .underline {
+        border-bottom: 3px solid #DABC39;
+    }
 
     a {
+        text-decoration: none;
         color: black;
     }
 
@@ -244,6 +249,3 @@ export const Logo = styled.img`
 //         }
 //         }
 // `;
-
-
-
