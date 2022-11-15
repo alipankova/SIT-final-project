@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HiOutlineShoppingBag } from "react-icons/hi";
+import { BsCart2 } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
 import { IconContext } from "react-icons";
 import Sidebar from "react-sidebar";
@@ -177,7 +177,7 @@ export default function ProductPageSidebar(props) {
         >
           <StickyCartContainer onClick={() => onSetSidebarOpen(true)}>
             <IconContext.Provider value={{ size: "100px" }}>
-              <HiOutlineShoppingBag />
+              <BsCart2 />
             </IconContext.Provider>
             <div>
               {
