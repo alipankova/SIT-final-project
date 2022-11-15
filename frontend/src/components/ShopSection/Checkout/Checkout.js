@@ -27,6 +27,7 @@ export default function Checkout() {
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
   const [scenario, setScenario] = useState();
+  const [orderId, setOrderId] = useState();
 
   useEffect(() => {
     localCart = JSON.parse(localCart);
@@ -56,7 +57,6 @@ export default function Checkout() {
     if (userData) {
       handleAutoFill();
     }
-    console.log(userData);
   }, [userData]);
 
   const handleAutoFill = (e) => {
@@ -73,16 +73,16 @@ export default function Checkout() {
 
 
   //Order submit handler
-  const handleOrderSubmit = (e) => {
+  const handleOrderSubmit = async (e) => {
     e.preventDefault();
 
     // create order
-    const order = handleCreateOrder();
-    console.log(order)
-    console.log("order id: ", order.id)
+    const order = await handleCreateOrder();
+    // console.log("order", orderId.body)
 
     //handle stripe
-    handlePayOrder(order.id)
+
+    handlePayOrder(orderId)
 
     console.log("submited");
   };
@@ -125,9 +125,8 @@ export default function Checkout() {
     setNote(e.target.value);
   };
 
-  const handleCreateOrder = () => {
+  const handleCreateOrder = async () => {
     const apiCart = cart.map((product) => product.id);
-    console.log("api_cart", apiCart);
 
     const url =
       "https://bag-for-everyone.propulsion-learn.ch/backend/api/order/";
@@ -154,18 +153,23 @@ export default function Checkout() {
       body: JSON.stringify(body),
     };
 
-    fetch(url, config).then((response) => {
-      if (response.status === 200) {
-        console.log(response);
-      } else {
-        console.log(response.json());
-      }
-    });
-  };
+    await fetch(url, config).then((response) => response.json())
+    .then((data) => console.log(data))
+      
+    //   if (response.status < 400) {
+    //     setOrderId(response);
+    //     console.log("response from fetch: ", response);
+    //   } else {
+    //     console.log(response.json());
+    //   }
+    // });
+  // };
 
+  }
 
   //stripe logic
   const handlePayOrder = (orderId) => {
+    console.log(orderId)
     let stripeCart = [];
     const stripeCounter = {};
     cart.forEach((elem) => {
@@ -334,21 +338,6 @@ export default function Checkout() {
                     onChange={handleCountryChange}
                   ></input>
 
-                  {/* These two will be feed from the cart or user fetch */}
-                  <input
-                    type="number"
-                    name="buyer"
-                    value={buyer}
-                    placeholder="Buyer"
-                    onChange={handleBuyerChange}
-                  ></input>
-                  <input
-                    type="number"
-                    name="product"
-                    value={products}
-                    placeholder="Product ID"
-                    onChange={handleProductsChange}
-                  ></input>
                 </AdressFormContainer>
                 <input
                   type="phone"
