@@ -12,24 +12,37 @@ export default function OrderConfirmation() {
   const orderId = useParams();
   let [cart, setCart] = useState([]);
   let localCart = localStorage.getItem("cart");
+  const [after, setAfter] = useState();
 
   useEffect(() => {
     //get local cart details
     localCart = JSON.parse(localCart);
     if (localCart) setCart(localCart);
+  }, []);
+
+  useEffect(() => {
+    if (cart) {
 
     //update the order status to paid
-    handleOrderStatusUpdate(orderId);
+    //handleOrderStatusUpdate(orderId);
 
     //get the product update set
     const updateSet = handleGetStockUpdateSet();
+    console.log("set: ", updateSet)
 
+    
     //handle the stock updates
-    updateSet.map(set => {
-      handleUpdateProductStock(set.product, set.amount)
-    })
+    updateProductStocks(updateSet)
 
-  }, []);
+    // updateSet.map(set => {
+    //   handleUpdateProductStock(set.product, set.amount)
+    // }   
+    // )
+    // localCart.removeItem("cart")
+
+
+    }
+  }, [cart]);
 
   const handleOrderStatusUpdate = (orderId) => {
     const orderStatusUpdate = {
@@ -53,9 +66,22 @@ export default function OrderConfirmation() {
         return response.json();
       })
       .then((data) => {});
+
   };
 
+  const updateProductStocks = (updateSet) => {
+
+    updateSet.map(set => {
+      handleUpdateProductStock(set.product, set.amount)
+    }   
+    )
+
+    localStorage.removeItem("cart")
+
+  }
+
   const handleGetStockUpdateSet = () => {
+    
     const productsReduced = cart?.filter(
       (value, index, self) =>
         index ===
@@ -64,17 +90,21 @@ export default function OrderConfirmation() {
         )
     );
 
-    let productAmountSet = [];
+    console.log(productsReduced)
 
-    productsReduced.forEach((product) => {
-      const amount = productsReduced?.filter(
+    let productAmountSet = [];
+    productsReduced?.forEach((product) => {
+      const amount = cart?.filter(
         (item) => item?.id === product?.id
       ).length;
+
+      console.log("amount: ", amount);
 
       let obj = {
         product: product,
         amount: amount,
       };
+
       productAmountSet.push(obj);
     });
 
@@ -82,6 +112,7 @@ export default function OrderConfirmation() {
   };
 
   const handleUpdateProductStock = (product, amountSold) => {
+    
     const stockUpdateData = {
       stock: product.stock - parseInt(amountSold),
     };
@@ -92,6 +123,9 @@ export default function OrderConfirmation() {
       method: "PATCH",
       headers: new Headers({
         "Content-Type": "application/json",
+        // Authorization: `Bearer ${
+        //   JSON.parse(localStorage.getItem("bagsAuth")).bagsToken
+        // }`,        
       }),
       body: bodyData,
     };
@@ -104,6 +138,7 @@ export default function OrderConfirmation() {
         return response.json();
       })
       .then((data) => {});
+
   };
 
   return (

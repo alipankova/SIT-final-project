@@ -77,23 +77,16 @@ export default function Checkout() {
     e.preventDefault();
 
     // create order
-    const order = await handleCreateOrder();
+    // const order = await handleCreateOrder();
     // console.log("order", orderId.body)
-
+    const orderId = 1;
     //handle stripe
-
     handlePayOrder(orderId)
 
     console.log("submited");
   };
 
    // handle inputs
-   const handleBuyerChange = (e) => {
-    setBuyer(e.target.value);
-  };
-  const handleProductsChange = (e) => {
-    setProducts(e.target.value);
-  };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -145,6 +138,8 @@ export default function Checkout() {
       shopping_note: note,
     };
 
+    console.log(body)
+
     const config = {
       method: "POST",
       headers: new Headers({
@@ -155,6 +150,7 @@ export default function Checkout() {
 
     await fetch(url, config).then((response) => response.json())
     .then((data) => console.log(data))
+    .then((data) => setOrderId(1))
       
     //   if (response.status < 400) {
     //     setOrderId(response);
@@ -164,12 +160,11 @@ export default function Checkout() {
     //   }
     // });
   // };
-
   }
 
   //stripe logic
   const handlePayOrder = (orderId) => {
-    console.log(orderId)
+    console.log("order id from stripe:", orderId)
     let stripeCart = [];
     const stripeCounter = {};
     cart.forEach((elem) => {
@@ -193,7 +188,8 @@ export default function Checkout() {
 
   const redirectToCheckout = async (list, orderId) => {
     const checkoutOptions = {
-      lineItems: list,
+      // lineItems: list,
+      lineItems: [{price: "price_1M2ygqIbEDX1qYr8ObgkRsnK", quantity: 1 }],
       mode: "payment",
       successUrl: `${window.location.origin}/orderconfirmation/${orderId}`,
       cancelUrl: `${window.location.origin}/cancel`,
