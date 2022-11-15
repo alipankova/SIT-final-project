@@ -58,8 +58,9 @@ const Register = () => {
             <StyledRegisterContainer onSubmit={onSubmit}>
                 <StyledTitle className='register-title'>
                     <strong>
-                        Step 1:&nbsp;
+                        Step 1
                     </strong>
+                    <br/>
                     Please register with your email address
                 </StyledTitle>
                 <StyledInput type="email" placeholder="Email address" value={emailAddress} onChange={(args) => setEmailAddress(args.target.value)} />
