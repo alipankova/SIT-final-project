@@ -5,12 +5,11 @@ export const StoryPageWrapper = styled.section `
     border: 2px solid red;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
     width: 100%;
-    height: 100%;
+    height: 100vh;
     gap: .5em;
     padding: .5em;
-    border-radius: 7px;
+    margin-top: 0;
     
     // whole searchbar with magnifier and post button:
     .search {
@@ -23,14 +22,14 @@ export const StoryPageWrapper = styled.section `
     // search from with magnifier:
     .search-form {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 70%;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 90%;
     }
 
     // search-form:
     .search-field {
-        width: 75%;
+        width: 100%;
         max-width: 400px;
     }
 
