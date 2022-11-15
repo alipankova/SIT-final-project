@@ -121,7 +121,7 @@ const CreateStory = () => {
                         Your story *
                         </label>
                         <textarea id="story" name="content" onChange = {handleStoryChange} required></textarea>
-                        <label htmlFor="select">Upload image *</label>
+                        <label htmlFor="select"></label>
                         <div className='file-field'>
                             <input id="select" multiple type='file' name='image' accept='image/' onChange={e => handleImageUpload(e)}></input>
                         </div>

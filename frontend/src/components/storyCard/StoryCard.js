@@ -13,6 +13,7 @@ const StoryCard = ({ story }) => {
   return (
       <StoryWrapper>
           <img className="preview" src={story.image} alt="description"></img>
+          <div className="overlay"></div>
           {/* Story heading that triggers opening of single story page: */}
           <h3 id={story.id}
               className='hide' 

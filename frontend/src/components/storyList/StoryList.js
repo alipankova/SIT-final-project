@@ -81,6 +81,7 @@ const StoryList = () => {
                      type="text" 
                      name="searchParam" 
                      onChange = {handleParamChange}
+                     placeholder='Please use keywords to look for a story'
               />
             </div>
             <SlMagnifier onClick={handleSearch}/>

@@ -10,67 +10,104 @@ export const CreateStoryWrapper = styled.section `
     top: 0;
     left: 0;
     background-color: rgba(33, 33, 33, 0.7);
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
 
     
     .modal-story-wrapper {
         background-color: white;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: flex-start;
-        padding: 10px;
+        padding: 20px;
         border-radius: 15px;
-        align-items: flex-start;
+        width: 40%;
+        height: 50%;
+      
 
-        @media (min-width: 480px) {
+        @media (max-width: 800px) {
             width: 90%;
-            margin: 0 auto;
+            margin: 0;
+            flex-direction: column;
+            height: 70%;
         }
-        @media (min-width: 650px) {
-            max-width: 60%;
-            margin: 0 auto;
+
+        @media (max-width: 1200px) {
+            flex-direction: column;
+            height: 60%;
         }
+
     }
 
     .modal-story-button {
         align-self: flex-start;
         margin-top: 1em;
-        margin-left: 1em;
+        margin-right: 1em;
     }
 
     .user-info-wrapper {
         display: flex;
         flex-direction: column;
-        border: 2px solid blue;
-    }
+        justify-content: flex-start;
+        width: 10%;
 
-    .file-field {
-        margin: 0 auto;
     }
-`
+`;
 
 export const FormWrapper = styled(StoryWrapper)`
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    align-self: center;
     margin: 0;
-    align-items: flex-start;
-    border: 2px solid green;
     height: 100%;
-    width: 80%;
+    width: 70%;
+    align-items: flex-start;
 
-    label{
+    label {
         font-size: 10px;
+        margin-bottom: 5px;
+        align-self: left;
     }
 
     textarea {
         width: 95%;
-        height: 10em;
+        height: 15em;
+        border: 1px solid rgba(218, 188, 57, 0.4);
+        margin-bottom: 20px;
     }
-`
+    
+    .form-input {
+        width: 95%;
+        height: 2em;
+        border: 1px solid rgba(218, 188, 57, 0.4);
+        margin-bottom: 20px;
+    }
+
+    input {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    input::-webkit-file-upload-button {
+        background-color: white;
+        color: black;
+        padding: 5px;
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 1px solid rgba(218, 188, 57, 1);
+        
+    }
+
+    @media (max-width: 800px) {
+        width: 90%;
+        }
+`;
 
 export const PostButton = styled(PageButton)`
-    padding: .5em;
-`
+    align-self: flex-end;
+    margin-top: auto;
+    
+`;
