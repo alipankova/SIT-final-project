@@ -69,12 +69,8 @@ export const FormWrapper = styled(StoryWrapper)`
         width: 95%;
         height: 10em;
     }
-<<<<<<< HEAD
-`;
-=======
 `
 
 export const PostButton = styled(PageButton)`
     padding: .5em;
 `
->>>>>>> d448ee20cd6883b2f65edcfe2d1b4bae01d15150

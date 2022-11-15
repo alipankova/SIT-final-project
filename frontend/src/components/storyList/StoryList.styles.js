@@ -6,11 +6,14 @@ import Modal from "styled-react-modal";
 export const StoryPageWrapper = styled.section `
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100vh;
+    justify-content: flex-start;
+    gap: ;
+    width: 100vw;
+    height: calc(100vh - 140px);
     gap: .5em;
     padding: .5em;
     margin-top: 0;
+    border: 3px solid red;
     
     // whole searchbar with magnifier and post button:
     .search {
@@ -18,6 +21,7 @@ export const StoryPageWrapper = styled.section `
         justify-content: space-around;
         gap: 1em;
         margin: .5em 0;
+        width: 100%;
     }
 
     // search from with magnifier:
@@ -25,7 +29,7 @@ export const StoryPageWrapper = styled.section `
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        width: 90%;
+        width: 80%;
     }
 
     // search-form:
@@ -92,12 +96,13 @@ export const StoryListWrapper = styled.div `
  `
 
 export const FadingBackground = styled(BaseModalBackground)`
-    color: #DABC39;
+    background-color: rgba(33, 33, 33, 0.7);
+    
     .warning {
         background-color: white;
-        border-radius: 20px;
-        width: 20em;
-        height: 20em;
+        border-radius: 15px;
+        width: 15em;
+        height: 10em;
         display: flex;
         gap: 2em;
         flex-direction: column;
@@ -106,10 +111,21 @@ export const FadingBackground = styled(BaseModalBackground)`
     }
 `;
 
+export const PageButton = styled.button`
+    background-color: #DABC39;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif; 
+    padding: 10px 10px;;
+    ;
+`;
+
 export const LoginWarningModal = styled(Modal)`
 
 `;
 
 export const WarningModalProvider = styled(ModalProvider)`
+
 `;
     

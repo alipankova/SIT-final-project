@@ -4,7 +4,7 @@ import { StoryListWrapper, StoryPageWrapper,
   FadingBackground, LoginWarningModal, WarningModalProvider } from './StoryList.styles';
 import StoryCard from '../storyCard/StoryCard';
 import { SlMagnifier } from 'react-icons/sl';
-import { PageButton } from '../../styles/global.styles';
+import { PageButton } from './StoryList.styles';
 
 const StoryList = () => {
 
@@ -67,9 +67,8 @@ const StoryList = () => {
           allowScroll = {false}
         >
           <div className='warning'>
-            <p>To post a story, please login</p>
-            <PageButton onClick={handleLoginRequest}>Login</PageButton>
-            <PageButton onClick={toggleModal}>Back to stories</PageButton>
+            <p>Please login to post a story</p>
+            <PageButton onClick={handleLoginRequest}>LOGIN</PageButton>
           </div> 
         </LoginWarningModal>
       </WarningModalProvider>
