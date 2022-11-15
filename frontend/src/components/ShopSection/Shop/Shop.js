@@ -1,6 +1,6 @@
 import Catalog from "../Catalog/Catalog.js";
 import { useState } from "react";
-import { HiOutlineShoppingBag } from "react-icons/hi";
+import { BsCart2 } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
 import { IconContext } from "react-icons";
 import Sidebar from "react-sidebar";
@@ -102,7 +102,7 @@ return (
           sidebar={
             <>
               <SidebarHeader>
-                <IconContext.Provider value={{ size: "50px", className: "arrow"}}>
+                <IconContext.Provider value={{ size: "100px", className: "arrow"}}>
                   <BsArrowRight onClick={() => onSetSidebarOpen(false)} />
                 </IconContext.Provider>
                 <p>Cart</p>
@@ -164,7 +164,7 @@ return (
         >
           <StickyCartContainer onClick={() => onSetSidebarOpen(true)}>
             <IconContext.Provider value={{ size: "100px" }}>
-              <HiOutlineShoppingBag />
+              <BsCart2 />
             </IconContext.Provider>
             <div>
               {
