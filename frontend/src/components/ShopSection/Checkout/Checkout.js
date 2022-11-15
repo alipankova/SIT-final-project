@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { ModalProvider } from "styled-react-modal";
 import StockInfoModal from "../../Utilities/Modals/StockInfoModal/StockInfoModal";
 import { loadStripe } from "@stripe/stripe-js";
+import { StickyButtonDiv } from "../../about/About.styles.js";
+
 
 export default function Checkout() {
   let [cart, setCart] = useState([]);
@@ -28,6 +30,7 @@ export default function Checkout() {
   const [opacity, setOpacity] = useState(0);
   const [scenario, setScenario] = useState();
   const [orderId, setOrderId] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
     localCart = JSON.parse(localCart);
@@ -448,17 +451,15 @@ export default function Checkout() {
                 </TotalsContainer>
               </ShoppingCart>
 
-              <OrderButton type="submit" onClick={handleOrderSubmit}>
-                Place Order
-              </OrderButton>
-            </RightSide>
-          </CheckoutForm>
-          <StockInfoModal
-            isOpen={isOpen}
-            scenario={scenario}
-            onClick={resetIsOpen}
-          />
-        </CheckoutContainer>
+            <OrderButton type="submit" onClick={handleOrderSubmit}>Place Order</OrderButton>
+
+          </RightSide>
+        </CheckoutForm>
+          <StickyButtonDiv>
+                <button onClick={() => navigate("/story")}>Story</button>
+          </StickyButtonDiv>
+        <StockInfoModal isOpen={isOpen} scenario={scenario} onClick={resetIsOpen}/>
+      </CheckoutContainer>
       </ModalProvider>
     </>
   );
