@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { PageButton } from "../../styles/global.styles";
 import { StoryWrapper } from "../story-page/StoryPage.styles";
+import { UserHeader } from '../story-page/StoryPage.styles';
 
 export const CreateStoryWrapper = styled.section `
     position: fixed;
@@ -9,13 +10,14 @@ export const CreateStoryWrapper = styled.section `
     justify-content: center;
     top: 0;
     left: 0;
-    background-color: rgba(33, 33, 33, 0.7);
+    background-color: rgba(33, 33, 33, 0.7); 
     width: 100vw;
     height: 100vh;
     align-items: center;
 
     
     .modal-story-wrapper {
+        margin: 0 auto;
         background-color: white;
         display: flex;
         flex-direction: row;
@@ -25,7 +27,6 @@ export const CreateStoryWrapper = styled.section `
         border-radius: 15px;
         width: 40%;
         height: 50%;
-      
 
         @media (max-width: 800px) {
             width: 90%;
@@ -47,13 +48,6 @@ export const CreateStoryWrapper = styled.section `
         margin-right: 1em;
     }
 
-    .user-info-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 10%;
-
-    }
 `;
 
 export const FormWrapper = styled(StoryWrapper)`
@@ -65,6 +59,7 @@ export const FormWrapper = styled(StoryWrapper)`
     height: 100%;
     width: 70%;
     align-items: flex-start;
+    margin-left: 25px;
 
     label {
         font-size: 10px;
@@ -103,11 +98,25 @@ export const FormWrapper = styled(StoryWrapper)`
 
     @media (max-width: 800px) {
         width: 90%;
+        margin-left: 0;
         }
 `;
 
 export const PostButton = styled(PageButton)`
     align-self: flex-end;
     margin-top: auto;
-    
+`;
+
+export const CreateStoryUserHeader = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: center;
+    height: 100%;
+    margin: auto 10px;
+    width: 15%;
+
+    span {
+        margin: 5px auto;
+    }
 `;

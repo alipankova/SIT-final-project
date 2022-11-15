@@ -1,6 +1,6 @@
 import Catalog from "../Catalog/Catalog.js";
 import { useState } from "react";
-import { HiOutlineShoppingBag } from "react-icons/hi";
+import { BsCart2 } from "react-icons/bs";
 import { BsArrowRight } from "react-icons/bs";
 import { IconContext } from "react-icons";
 import Sidebar from "react-sidebar";
@@ -22,6 +22,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { ModalProvider } from "styled-react-modal";
 import StockInfoModal from "../../Utilities/Modals/StockInfoModal/StockInfoModal";
+import { StickyButtonDiv } from "../../about/About.styles.js";
 
 export default function Shop() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -100,7 +101,7 @@ return (
           sidebar={
             <>
               <SidebarHeader>
-                <IconContext.Provider value={{ size: "50px", className: "arrow"}}>
+                <IconContext.Provider value={{ size: "100px", className: "arrow"}}>
                   <BsArrowRight onClick={() => onSetSidebarOpen(false)} />
                 </IconContext.Provider>
                 <p>Cart</p>
@@ -162,7 +163,7 @@ return (
         >
           <StickyCartContainer onClick={() => onSetSidebarOpen(true)}>
             <IconContext.Provider value={{ size: "100px" }}>
-              <HiOutlineShoppingBag />
+              <BsCart2 />
             </IconContext.Provider>
             <div>
               {
@@ -172,6 +173,9 @@ return (
               </div>
           </StickyCartContainer>
           <Catalog page={pageRouting}/>
+          <StickyButtonDiv>
+                <button onClick={() => navigate("/story")}>Story</button>
+          </StickyButtonDiv>
         </Sidebar>
         <StockInfoModal isOpen={isOpen} scenario={scenario} onClick={resetIsOpen}/>
       </PageSection>

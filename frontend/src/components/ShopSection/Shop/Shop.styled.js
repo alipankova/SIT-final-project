@@ -63,9 +63,9 @@ export const StickyCartContainer = styled.div`
 
 export const SidebarHeader = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 100%;
-  /* align-items: center;
-  justify-content: center; */
    
     p {
       display: flex;

@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { BaseModalBackground } from "styled-react-modal";
 
 export const PageSection = styled.section`
-  border: 5px solid red;
     margin-top: 9rem;
     display: flex;
     flex-direction: column;

@@ -1,6 +1,6 @@
 import {
     StyledLoginSectionContainer,
-    StyledText,
+    StyledText, StyledTextV,
 
 } from '../LoginSection.styled';
 
@@ -13,9 +13,13 @@ const Verified = () => {
     return (
         <StyledLoginSectionContainer>
             <StyledVerifiedContainer >
-                <StyledText >
-                    Your email address has been successfully verified!
-                </StyledText>
+                <div className='images'>
+                    <img src="/assets/images/Rectangle14.png" />
+                </div>
+                <StyledTextV >
+                   <strong> Your email address has been successfully verified!</strong>
+                </StyledTextV>
+                <br/>
                 <StyledText>
                 Head back to the log-in page in order to access full potential of our page.
                 </StyledText>
