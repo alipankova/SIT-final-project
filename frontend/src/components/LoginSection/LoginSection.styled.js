@@ -2,21 +2,21 @@ import styled from "styled-components";
 
 export const StyledInput = styled.input`
 font-family: 'Montserrat';
-width: 455px;
-height: 97px;
+width: 365px;
+height: 50px;
 box-sizing: border-box;
 background-color: #FFFFFF;
 border: 3px solid #DABC39;
 border-radius: 15px;
-font-size: 32px;
-padding-left: 42px;
+font-size: 24px;
+padding-left: 36px;
 
 &::placeholder {
     color: #969595;
     font-style: normal;
-    font-size: 32px;
-    font-weight: 400;
-    line-height: 39px;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 29px;
     
     }
 
@@ -27,13 +27,13 @@ font-family: 'Montserrat';
 background-color: #DABC39;
 border-radius: 15px;
 border-color:  #DABC39;
-font-style: normal;
+font-style: solid;
 color: #000000;
-font-size: 32px;
+font-size: 24px;
 font-weight: 400;
-line-height: 39px;
-width: 220px;
-height: 80px;
+line-height: 34px;
+width: 158px;
+height: 34px;
 
 
 `;
@@ -44,10 +44,11 @@ export const StyledLoginSectionContainer = styled.div`
 `;
 
 export const StyledTitle = styled.div`
+text-align: center;
 color: #000000;
-font-size: 36px;
+font-size: 24px;
 font-weight: 500;
-line-height: 44px;
+line-height: 29px;
 `;
 
 export const StyledText = styled.div`
@@ -60,6 +61,14 @@ a {
     color: #000000;
     font-weight: bold;
 }
+`;
+
+export const StyledTextV = styled.div`
+color: #DABC39;
+font-size: 24px;
+font-weight: 400;
+line-height: 29px;
+font-style: bold;
 `;
 
 export const ErrorContainer = styled.div`

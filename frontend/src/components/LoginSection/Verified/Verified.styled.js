@@ -6,5 +6,13 @@ export const StyledVerifiedContainer = styled.div`
     justify-content: center;
     align-items: center;
     height: 100%;
+    font-style: regular;
     
+    .images {
+        display: flex;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 30px;
+        }
 `;
+
