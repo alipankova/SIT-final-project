@@ -8,10 +8,12 @@ const Navbar = () => {
   // route that it links to is currently selected.
   const [showNavbar, setShowNavbar] = useState(false);
 
+
   const handleHamburgerClick = () => {
     setShowNavbar(!showNavbar);
   }
 
+ 
   return (
     <>
     {showNavbar && <NavbarLinks />}

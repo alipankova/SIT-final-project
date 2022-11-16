@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { BaseModalBackground, ModalProvider } from "styled-react-modal";
 import Modal from "styled-react-modal";
-import { PageButton } from '../../styles/global.styles'
+
 
 // mobile designs first (480px width and less):
 export const StoryPageWrapper = styled.section `
@@ -15,7 +15,7 @@ export const StoryPageWrapper = styled.section `
     width: 100vw;
     height: 100%;
     gap: .5em;
-    padding: 0;
+    padding-top: 3em;
     margin-top: 0;
     
     // whole searchbar with magnifier and post button:
@@ -23,10 +23,7 @@ export const StoryPageWrapper = styled.section `
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        gap: 1em;
-        margin: .5em 0;
         width: 60%;
-    }
 
     // search from with magnifier:
     .search-form {
@@ -78,15 +75,19 @@ export const StoryPageWrapper = styled.section `
         color: #969595;
         opacity: 0.4;
     }
-`
+}
+`;
+
+
 // wrapper around stories (excluding searchbar and post button). It
 // will change to grid and adjust column numbers:
 export const StoryListWrapper = styled.div `
-    width: 70%;
+    width: 60%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: .5em;
     margin: 0;
+    margin-top: 2em;
 
     @media (max-width: 420px) {
         display: flex;
@@ -99,6 +100,10 @@ export const StoryListWrapper = styled.div `
         flex-direction: column;
         padding: .5em;
         width: 85%;
+    }
+
+    @media (max-width: 1450px) {
+        grid-template-columns: 1fr 1fr;
     }
  `;
 
@@ -124,8 +129,7 @@ export const PageButton = styled.button`
     border-radius: 10px;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif; 
-    padding: 10px 10px;;
-    ;
+    padding: 10px 10px;
 `;
 
 export const LoginWarningModal = styled(Modal)`
@@ -137,7 +141,15 @@ export const WarningModalProvider = styled(ModalProvider)`
 `;
     
 export const PostButton = styled(PageButton)`
-    padding: 1em 2em;
+    padding: .5em 1em;
     border-radius: 20px;
-    font-size: 1em;
+    font-size: 16px;
+
+    @media (max-width: 1250px) {
+        font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 8px;
+    }
 `;

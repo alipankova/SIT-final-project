@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const StoryWrapper = styled.section `
     margin-bottom: 1em;
     position: relative;
-    border: 3px solid red;
     width: 360px;
     max-width: 100%;
 

@@ -87,7 +87,7 @@ const StoryList = () => {
             </div>
             <SlMagnifier onClick={handleSearch}/>
           </div>
-          <PostButton onClick={handlePostClick}>POST</PostButton>
+          <PostButton onClick={handlePostClick}>NEW STORY</PostButton>
         </div>
         <StoryListWrapper>
             {stories && allStories}

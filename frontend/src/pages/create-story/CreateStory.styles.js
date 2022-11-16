@@ -57,7 +57,7 @@ export const FormWrapper = styled(StoryWrapper)`
     align-self: center;
     margin: 0;
     height: 100%;
-    width: 70%;
+    width: 75%;
     align-items: flex-start;
     margin-left: 25px;
 
@@ -83,6 +83,7 @@ export const FormWrapper = styled(StoryWrapper)`
 
     input {
         font-family: 'Montserrat', sans-serif;
+        color: #969595;
     }
 
     input::-webkit-file-upload-button {

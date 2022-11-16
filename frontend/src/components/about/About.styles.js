@@ -1,24 +1,29 @@
 import styled from "styled-components"
-// import "@fontsource/montserrat";
 
 
 export const AboutContainerDiv = styled.div`
     background: #fff;
     display: flex;
-    justify-content: space-evenly;
     width: 100vw;
+    height: auto;
     margin-top: 7em;
-    margin-bottom: 6em;
+    margin-bottom: 2em;
     flex-direction: column;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 `;
 
 export const ImageSliderDiv = styled.div` 
     height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    bottom: 0;
+    position: static;
+    scroll-snap-align: center;
+    
 
     @media only screen and (max-width: 900px) {
         flex-direction: column;
-        justify-content: flex-start;
-        padding: 0;
     }
 `;
 
@@ -55,8 +60,10 @@ export const TextBoxDiv = styled.div`
     justify-content: flex-start;
     align-self: center;
     flex-direction: column;
-    max-width: 80vw;
-    overflow: hidden;
+    max-width: 60vw;
+    margin-top: 95vh;
+    height: 85vh;
+    scroll-snap-align: center;
     
     h1 {
         color: #DABC39;
@@ -70,7 +77,7 @@ export const TextBoxDiv = styled.div`
         color: #000000;
         font-family: 'Montserrat', sans-serif;
         font-size: 16px;
-        
+        align-self: center;
     }
 
     img {
@@ -78,10 +85,12 @@ export const TextBoxDiv = styled.div`
         align-self: center;
     }
 
- @media only screen and (max-width: 450px) {
+ @media only screen and (max-width: 650px) {
         justify-content: space-evenly;
-        max-width: 100vw;
+        max-width: 90vw;
         padding: 10px;
+        margin-top: 80vh;
+        height: 60vh;
         
         h1 {
             font-size: 14px;
@@ -89,12 +98,29 @@ export const TextBoxDiv = styled.div`
 
         p {
             font-size: 10px;
-            margin: 5px;
+         
         }
 
         img {
-            width: 100vw;
+            width: 90vw;
         }
     }
 `;  
 
+export const LandingPageDiv = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 0;
+    scroll-snap-align: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.9;
+    }
+`;

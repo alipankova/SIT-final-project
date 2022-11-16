@@ -5,9 +5,8 @@ import { BiDonateHeart } from 'react-icons/bi';
 // import "@fontsource/montserrat";
 
 export const NavbarWrapper = styled.nav`
-    border: 1px solid #DDD8C4;
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2), 0px 20px 40px rgba(0, 0, 0, 0.15);
-    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2), 0px 5px 20px rgba(0, 0, 0, 0.15);
+    background-color: rgba(255, 255, 255, 1);
     font-size: 0.8em;
     display: flex;
     flex-direction: column;
@@ -17,6 +16,11 @@ export const NavbarWrapper = styled.nav`
     left: 4em;
     padding: .5em;
     gap: 1em;
+
+    nav.active {
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0;
+    }
 
     ul {
         /* border: 1px solid red; */
@@ -147,5 +151,6 @@ ul {
 export const Logo = styled.img`
     width: 80px;
     padding: .5em;
+    margin-left: 40px;
 `
 

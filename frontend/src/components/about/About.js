@@ -10,7 +10,7 @@ const ImageSlider = ({slides}) => {
 
     const slideStyles = {
         width: '100%',
-        height: '500px',
+        height: '100%',
         borderRadius: '15px',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -19,23 +19,21 @@ const ImageSlider = ({slides}) => {
 
     const leftArrowStyles = {
         position: 'absolute',
-        top: '50%',
-        transform: 'translate(0, -50%)',
-        left: '20vw',
-        fontSize: '45px',
-        color: '#fff',
-        zIndex: 1, 
+        top: '240%',
+        left: '10vw',
+        fontSize: '40px',
+        color: 'white',
+        zIndex: 0, 
         cursor: 'pointer',
     }
     
     const rightArrowStyles = {
         position: 'absolute',
-        top: '50%',
-        transform: 'translate(0, -50%)',
-        right: '20vw',
-        fontSize: '45px',
-        color: '#fff',
-        zIndex: 1, 
+        top: '240%',
+        right: '10vw',
+        fontSize: '40px',
+        color: 'white',
+        zIndex: 0, 
         cursor: 'pointer',
     }
 
@@ -54,8 +52,8 @@ const ImageSlider = ({slides}) => {
     return (
         <ImageSliderDiv>
             <div style={slideStyles}>
-                <div style={leftArrowStyles} onClick={goToPrevious}>←</div>
-                <div style={rightArrowStyles} onClick={goToNext}>→</div>
+                <div style={leftArrowStyles} onClick={goToPrevious}>◀</div>
+                <div style={rightArrowStyles} onClick={goToNext}>▶</div>
             </div>
         </ImageSliderDiv>
     )

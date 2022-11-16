@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
 import { NavbarWrapper, Logo, GroupLeft, GroupRight } from './NavbarLinks.styles';
 import { useNavigate } from 'react-router-dom';
@@ -6,6 +6,19 @@ import { useSelector } from 'react-redux';
 import { SewingMachine, Book, Bag, Donate, Login } from './NavbarLinks.styles';
 
 const NavbarLinks = () => {
+
+    const [nav, setNav] = useState(false)
+
+    const changeBackground = () => {
+        if(window.scrollY >= 50) {
+          setNav(true)
+        } else {
+          setNav(false)
+        }
+      }
+
+    window.addEventListener('scroll', changeBackground);
+
  
     const localToken = localStorage.getItem("bagsAuth");
 
