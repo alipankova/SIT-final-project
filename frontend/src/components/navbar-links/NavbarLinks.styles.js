@@ -7,7 +7,7 @@ import { BiDonateHeart } from 'react-icons/bi';
 export const NavbarWrapper = styled.nav`
     border: 1px solid #DDD8C4;
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2), 0px 20px 40px rgba(0, 0, 0, 0.15);
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255);
     font-size: 0.8em;
     display: flex;
     flex-direction: column;
@@ -30,10 +30,14 @@ export const NavbarWrapper = styled.nav`
         padding: 0;
         gap: 1em;
     }
+
+    li {
+        font-size: 1.2em;
+    }
     
     .underline {
         border-bottom: 3px solid #DABC39;
-        padding-bottom: .5rem
+        padding-bottom: .5rem;
     }
 
     a {

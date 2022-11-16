@@ -22,7 +22,6 @@ const StoryPage = () => {
   const [displayEdit, setDisplayEdit] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState('');
   const [comments, setComments] = useState([]);
-  const [localToken, setLocalToken] = useState(localStorage.getItem("bagsAuth"));
   
   const displayComments = comments.map(elem => <Comment  
                                                   key={elem.id}
@@ -46,6 +45,7 @@ const StoryPage = () => {
 
   const handleStoryDelete = () => {
     // Delete the post:
+    const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
       const url = `https://bag-for-everyone.propulsion-learn.ch/backend/api/post/${id}/`;
       const config = {
           method: "DELETE",
@@ -61,7 +61,8 @@ const StoryPage = () => {
   }
 
   // fetch logged-in user:
-  useEffect(() => {
+  const fetchUser = () => {
+    const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
     const url = "https://bag-for-everyone.propulsion-learn.ch/backend/api/user/me/";
     const config = {
         method: "GET",
@@ -69,13 +70,11 @@ const StoryPage = () => {
             "Authorization": `Bearer ${localToken}`
         }
     }
-    if (localToken) {
-      fetch(url, config)
+    fetch(url, config)
         .then(response => response.json())
         .then(data => setLoggedInUser(data))
         .catch(error => console.log(error))
-      }
-    },[]);
+  }
 
   // fetch current story:
   useEffect(() => {
@@ -141,7 +140,7 @@ const StoryPage = () => {
                   </StoryImages>
 
                   {/* COMMENTS SECTION */}
-                  <CommentButton onClick={() => navigate(`/comment/create/${id}`)}>POST A NEW COMMENT</CommentButton>
+                  {loggedInUser && <CommentButton onClick={() => navigate(`/comment/create/${id}`)}>POST A NEW COMMENT</CommentButton>}
                   <Collapsible trigger={comments.length !== 0 ? "Show/ Hide comments" : "There are currently no comments."}>
                     { comments && displayComments }
                   </Collapsible>

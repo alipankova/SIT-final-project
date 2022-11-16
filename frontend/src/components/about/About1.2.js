@@ -38,6 +38,7 @@ const About1 = () => {
                 <h1>About bagforeveryone</h1>
                 <p>The project welcomes refugee and migrant communities, local Greeks, and vulnerable people residing on the Greek island of Lesvos to join in and learn how to use industrial sewing machines to craft items by hand and produce stylish shopper bags. The bags, which are all available on our website, are all made from vegan materials and purchased in the town of Mytilene, the capital of Lesvos.</p>
                 <img src="../assets/images/about/stats.png" />
+                <p style={{color: '#DABC39'}}>Legend: Workshop Attendee Statistics</p>
             </TextBoxDiv>
             <StickyButtonDiv>
                 <button onClick={() => handleNavigateTo("story")}>Story</button>

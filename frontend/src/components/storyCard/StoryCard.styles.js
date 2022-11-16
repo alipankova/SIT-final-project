@@ -23,6 +23,11 @@ export const StoryWrapper = styled.section `
     @media (min-width: 480px) {
 
             h3 {
+                margin: 0;
+                display: flex;
+                align-items: center;
+                padding: 0 1em;
+                font-size: 2em;
                 opacity: 0;
             }
 
@@ -36,7 +41,7 @@ export const StoryWrapper = styled.section `
     img {
         display: block;
         max-width: 100%;
-        margin: 0 auto;
+        margin: -.5em auto;
         width: 360px; 
         aspect-ratio: 1 / 1;
         object-fit: cover; 

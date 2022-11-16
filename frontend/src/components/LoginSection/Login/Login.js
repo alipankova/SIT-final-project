@@ -76,7 +76,6 @@ const Login = () => {
                 <StyledInput type="email" placeholder="Email" value={email} onChange={(args) => setEmail(args.target.value)}/>
                 <StyledInput type="password" placeholder="Password" value={password} onChange={(args) => setPassword(args.target.value)} />
                 <LoginButton  type='submit'>LOG IN</LoginButton>
-                
                 <StyledText>
                     Not signed up yet? <NavLink to="/register">Sign up</NavLink>
                 </StyledText>

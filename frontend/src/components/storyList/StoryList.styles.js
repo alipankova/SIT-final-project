@@ -6,7 +6,7 @@ import { PageButton } from '../../styles/global.styles'
 // mobile designs first (480px width and less):
 export const StoryPageWrapper = styled.section `
     display: flex;
-    margin-top: 3em;
+    margin-top: 1.5em;
     border: 1px solid lightgray;
     overflow-y: scroll;
     flex-direction: column;
@@ -19,17 +19,20 @@ export const StoryPageWrapper = styled.section `
     
     // whole searchbar with magnifier and post button:
     .search {
+        
+        min-width: 65%;
+        margin: 0 auto;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         gap: 1em;
-        margin: .5em 0;
+        margin: 2em auto;
     }
 
     // search from with magnifier:
     .search-form {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: left;
         width: 70%;
     }
 
@@ -41,9 +44,11 @@ export const StoryPageWrapper = styled.section `
 
     .search-story {
         min-width: 75%;
+        min-height: 3rem; 
         padding: 0.3rem;
         border: none;
-        border-bottom: 1px solid #D3D3D3;
+        border: 1px solid #D3D3D3;
+        border-radius: 10px;
     }
     
     .search-form {
@@ -70,7 +75,7 @@ export const StoryListWrapper = styled.div `
     @media (min-width: 865px) {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: .5em;
+        grid-gap: 1.5em;
         padding: .5em;
     }
  `
@@ -91,7 +96,7 @@ export const FadingBackground = styled(BaseModalBackground)`
 `;
 
 export const LoginWarningModal = styled(Modal)`
-
+   
 `;
 
 export const WarningModalProvider = styled(ModalProvider)`

@@ -11,7 +11,7 @@ const NavbarLinks = () => {
 
     let activeStyle = {
         borderBottom: "3px solid #DABC39",
-        paddingBottom: ".5rem"
+        paddingBottom: ".5rem",
     };
 
     let activeClassName = "underline";
