@@ -101,7 +101,7 @@ return (
           sidebar={
             <>
               <SidebarHeader>
-                <IconContext.Provider value={{ size: "100px", className: "arrow"}}>
+                <IconContext.Provider value={{ size: "80px", className: "arrow"}}>
                   <BsArrowRight onClick={() => onSetSidebarOpen(false)} />
                 </IconContext.Provider>
                 <p>Cart</p>
@@ -120,7 +120,7 @@ return (
                       <ProductContainer>
                         <img src={product?.image} alt="product in cart"></img>
                         <div>
-                          <span>{product?.name}</span>
+                          <span style={{textAlign:"center"}}>{product?.name}</span>
                           <span>CHF {product?.price}</span>
                           <AddRemoveContainer>
                             <div onClick={() => handleAddToCart(product)}>+</div>

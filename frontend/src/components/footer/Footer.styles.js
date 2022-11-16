@@ -14,17 +14,18 @@ export const FooterWrapperDiv = styled.div`
     background: rgba(255, 255, 255, 1);
     position: fixed;
     overflow: hidden;
+
+    p {
+        margin: 0;
+    }
 `;
 
 export const TabsContainerDiv = styled.div`
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-around;
-    width: 50vw;
-    margin-left: 25vw;
 
     *{
-    cursor: pointer;
     color: #1E1E1E;
     font-family: 'Montserrat', sans-serif; 
     font-size: 16px;
@@ -43,18 +44,22 @@ export const TabsContainerDiv = styled.div`
 export const TabsDiv = styled.div`
     flex-direction: column;
     align-items: center;
-    padding: 0;
+    padding: 0 5rem;
   
     *{
         margin-right: 5px;
     }
 
     p {
-        :hover{
-        color: #DABC39;
-        }
+        margin: 1rem 0;
     }
 
+    svg {
+        margin-bottom: 1rem;
+        :hover{
+            color: red;  
+        }
+    }
 
     @media screen and (max-width: 480px) {
         *{ 
@@ -64,7 +69,6 @@ export const TabsDiv = styled.div`
 `;
 
 export const Signature = styled.div`
-    margin: auto auto 0 0;
     color: black;
     font-size: 10px;
 
@@ -73,3 +77,29 @@ export const Signature = styled.div`
         
     }
 `;
+
+export const ReactableLinks = styled.p`
+    cursor: pointer;
+    font-size: 18px;
+    :hover{
+        color: #DABC39;
+        }
+
+`
+
+export const LinksDiv = styled.div`
+    display: flex;
+
+    div {
+        font-size: 18px;
+    }
+  
+`
+
+export const SocialMediaDivs = styled.div`
+    display:flex;
+
+    *{
+        font-size: 18px;
+    }
+`

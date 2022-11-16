@@ -114,7 +114,7 @@ export default function ProductPageSidebar(props) {
             <>
               <SidebarHeader>
                 <IconContext.Provider
-                  value={{ size: "50px", className: "arrow" }}
+                  value={{ size: "80px", className: "arrow" }}
                 >
                   <BsArrowRight onClick={() => onSetSidebarOpen(false)} />
                 </IconContext.Provider>
@@ -133,7 +133,7 @@ export default function ProductPageSidebar(props) {
                           <ProductContainer key={idx}>
                             <img src={product?.image} alt="product in cart"></img>
                             <div>
-                              <span>{product?.name}</span>
+                              <span style={{textAlign: "center"}}>{product?.name}</span>
                               <span>CHF {product?.price}</span>
                               <AddRemoveContainer >
                                 <div onClick={() => handleAddToCart(product)}>+</div>

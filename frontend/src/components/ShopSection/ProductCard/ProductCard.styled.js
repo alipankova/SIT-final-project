@@ -17,6 +17,8 @@ export const CardContainer = styled.div`
 export const AvatarContainer = styled.div`
   position: relative;
 
+  max-width: 100%;
+
   .preview {
     max-width: 100%;
     object-fit: cover;
@@ -43,7 +45,7 @@ export const AvatarContainer = styled.div`
    }
 
   img {
-    width: 400px;
+    width: 100%;
   }
 `;
 
