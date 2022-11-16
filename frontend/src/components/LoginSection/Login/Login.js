@@ -1,20 +1,21 @@
 import { useState, useEffect } from 'react';
 
 import {
-    StyledButton,
     StyledInput,
     StyledLoginSectionContainer,
-    StyledText,
+    StyledText
 } from '../LoginSection.styled';
-
 import {
-    StyledLoginContainer
-} from './Login.styled'
+    StyledLoginContainer,
+    LoginImage
+} from './Login.styled';
 
 import {
     NavLink,
     useNavigate
 } from 'react-router-dom';
+import { LoginButton } from '../LoginSection.styled';
+
 
 const Login = () => {
 
@@ -70,10 +71,11 @@ const Login = () => {
 
     return (
         <StyledLoginSectionContainer>
+            <LoginImage />
             <StyledLoginContainer onSubmit={handleSubmit}>
                 <StyledInput type="email" placeholder="Email" value={email} onChange={(args) => setEmail(args.target.value)}/>
                 <StyledInput type="password" placeholder="Password" value={password} onChange={(args) => setPassword(args.target.value)} />
-                <StyledButton  type='submit'>LOG IN</StyledButton>
+                <LoginButton  type='submit'>LOG IN</LoginButton>
                 
                 <StyledText>
                     Not signed up yet? <NavLink to="/register">Sign up</NavLink>

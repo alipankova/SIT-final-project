@@ -98,7 +98,5 @@ export const WarningModalProvider = styled(ModalProvider)`
 `;
     
 export const PostButton = styled(PageButton)`
-    padding: 1em 2em;
-    border-radius: 20px;
-    font-size: 1em;
+    padding: .3rem 3rem;
 `;

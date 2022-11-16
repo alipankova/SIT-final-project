@@ -23,9 +23,9 @@ const ImageSlider = ({slides}) => {
         transform: 'translate(0, -50%)',
         left: '20vw',
         fontSize: '45px',
-        color: '#fff',
+        color: '#DABC39',
         zIndex: 1, 
-        cursor: 'pointer',
+        cursor: 'pointer'
     }
     
     const rightArrowStyles = {
