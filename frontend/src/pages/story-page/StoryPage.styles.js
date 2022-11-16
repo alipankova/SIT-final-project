@@ -54,6 +54,10 @@ export const StoryWrapper = styled.section `
             font-size: 1.5em;
 	    }
     }
+
+    h2 {
+        text-align: center;
+    }
 `
 
 export const ContentWrapper = styled.div `

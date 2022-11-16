@@ -33,6 +33,7 @@ export const NavbarWrapper = styled.nav`
     
     .underline {
         border-bottom: 3px solid #DABC39;
+        padding-bottom: .5rem
     }
 
     a {

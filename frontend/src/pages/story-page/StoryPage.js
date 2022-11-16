@@ -13,7 +13,6 @@ import EditStory from '../../components/edit-story/EditStory';
 
 const StoryPage = () => {
 
-  const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
   const { id } = useParams();
   
   const navigate = useNavigate();
@@ -23,6 +22,7 @@ const StoryPage = () => {
   const [displayEdit, setDisplayEdit] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState('');
   const [comments, setComments] = useState([]);
+  const [localToken, setLocalToken] = useState(localStorage.getItem("bagsAuth"));
   
   const displayComments = comments.map(elem => <Comment  
                                                   key={elem.id}
@@ -69,19 +69,20 @@ const StoryPage = () => {
             "Authorization": `Bearer ${localToken}`
         }
     }
-    fetch(url, config)
+    if (localToken) {
+      fetch(url, config)
         .then(response => response.json())
         .then(data => setLoggedInUser(data))
         .catch(error => console.log(error))
-  }, []);
+      }
+    },[]);
 
   // fetch current story:
   useEffect(() => {
     const config = {
       method: "GET",
       headers: new Headers ({
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${localToken}`
+        "Content-Type": "application/json"
       })
     };
   fetch(`https://bag-for-everyone.propulsion-learn.ch/backend/api/post/${id}/`, config)
@@ -94,8 +95,7 @@ const StoryPage = () => {
     const config = {
       method: "GET",
       headers: new Headers ({
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${localToken}`
+        "Content-Type": "application/json"
       })
     };
   fetch(`https://bag-for-everyone.propulsion-learn.ch/backend/api/post/comment/list/`, config)
