@@ -115,7 +115,7 @@ class RetrieveUpdateDestroyOrderView(RetrieveUpdateDestroyAPIView):
     #
     #        Delete an order by passing the order-id as a parameter into the URL
     #     """
-
+    permission_classes = []
     send_mail(
         'bags order',
         'Thank you for sending your money to Vedrans stripe account. He will use the money for good things, like buying himself some nice things.',
