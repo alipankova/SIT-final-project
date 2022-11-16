@@ -69,23 +69,29 @@ const StoryList = () => {
         >
           <div className='warning'>
             <p>To post a story, please login</p>
-            <PageButton onClick={handleLoginRequest}>Login</PageButton>
-            <PageButton onClick={toggleModal}>Back to stories</PageButton>
+            <PageButton onClick={handleLoginRequest}>LOGIN</PageButton>
+            <PageButton onClick={toggleModal}>BACK TO STORIES</PageButton>
           </div> 
         </LoginWarningModal>
       </WarningModalProvider>
+      <h2 style={{fontWeight: '500',
+                  marginTop: '2em'}}
+      >Join the
+        <span style={{fontWeight: '700'}}> bagforeveryone </span>journey!
+      </h2>
       <StoryPageWrapper>
         <div className='search'>
           <div className='search-form'>
             <div className='search-field'>
-              <input className='form-input search-story' 
+              <input placeholder="...search titles or content" 
+                    className='form-input search-story' 
                      value={searchParam}
                      type="text" 
                      name="searchParam" 
                      onChange = {handleParamChange}
               />
             </div>
-            <SlMagnifier onClick={handleSearch}/>
+            <SlMagnifier style={{cursor: 'pointer'}} onClick={handleSearch}/>
           </div>
           <PostButton onClick={handlePostClick}>POST</PostButton>
         </div>

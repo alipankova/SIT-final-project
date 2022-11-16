@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { 
     ImageSliderDiv,
-} from './About.styles'
+} from './About.styles';
+import {IoIosArrowDropleft} from 'react-icons/io';
+import {IoIosArrowDropright} from 'react-icons/io';
+import { faBlackboard } from '@fortawesome/free-solid-svg-icons';
 
 
 const ImageSlider = ({slides}) => {
@@ -19,21 +22,21 @@ const ImageSlider = ({slides}) => {
 
     const leftArrowStyles = {
         position: 'absolute',
-        top: '50%',
+        top: 'calc(50% - 5rem)',
         transform: 'translate(0, -50%)',
         left: '20vw',
-        fontSize: '45px',
-        color: '#DABC39',
+        fontSize: '5em',
+        color: '#fff',
         zIndex: 1, 
         cursor: 'pointer'
     }
     
     const rightArrowStyles = {
         position: 'absolute',
-        top: '50%',
+        top: 'calc(50% - 5rem)',
         transform: 'translate(0, -50%)',
         right: '20vw',
-        fontSize: '45px',
+        fontSize: '5em',
         color: '#fff',
         zIndex: 1, 
         cursor: 'pointer',
@@ -54,8 +57,8 @@ const ImageSlider = ({slides}) => {
     return (
         <ImageSliderDiv>
             <div style={slideStyles}>
-                <div style={leftArrowStyles} onClick={goToPrevious}>←</div>
-                <div style={rightArrowStyles} onClick={goToNext}>→</div>
+                <IoIosArrowDropleft style={leftArrowStyles} onClick={goToPrevious} />
+                <IoIosArrowDropright style={rightArrowStyles} onClick={goToNext} />
             </div>
         </ImageSliderDiv>
     )

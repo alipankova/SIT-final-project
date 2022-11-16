@@ -10,7 +10,8 @@ const NavbarLinks = () => {
     const localToken = localStorage.getItem("bagsAuth");
 
     let activeStyle = {
-        borderBottom: "3px solid #DABC39"
+        borderBottom: "3px solid #DABC39",
+        paddingBottom: ".5rem",
     };
 
     let activeClassName = "underline";

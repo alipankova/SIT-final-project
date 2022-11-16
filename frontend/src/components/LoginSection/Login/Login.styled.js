@@ -14,4 +14,5 @@ export const LoginImage = styled.div`
     background-image: url('../assets/images/loginscreen/hands.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: 0% 20%;
 `
