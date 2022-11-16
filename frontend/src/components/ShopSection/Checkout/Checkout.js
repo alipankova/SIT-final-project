@@ -1,13 +1,29 @@
 import { useNavigate } from "react-router-dom";
-import {  CheckoutContainer,  CheckoutHeader,  CheckoutForm,  FormTitle,  ShippingForm,  DeliveryInfoForm,  RightSide,
-  LeftSide,  ShoppingCart,  AdressFormContainer, ProductContainer,  AddRemoveContainer,  TotalsContainer,  Separator,
-  Subtotal,  OrderButton,  ProductGrid,  FadingBackground} from "./Checkout.styled.js";
+import {
+  CheckoutContainer,
+  CheckoutHeader,
+  CheckoutForm,
+  FormTitle,
+  ShippingForm,
+  DeliveryInfoForm,
+  RightSide,
+  LeftSide,
+  ShoppingCart,
+  AdressFormContainer,
+  ProductContainer,
+  AddRemoveContainer,
+  TotalsContainer,
+  Separator,
+  Subtotal,
+  OrderButton,
+  ProductGrid,
+  FadingBackground,
+} from "./Checkout.styled.js";
 import { useEffect, useState } from "react";
 import { ModalProvider } from "styled-react-modal";
 import StockInfoModal from "../../Utilities/Modals/StockInfoModal/StockInfoModal";
 import { loadStripe } from "@stripe/stripe-js";
 import { StickyButtonDiv } from "../../about/About.styles.js";
-
 
 export default function Checkout() {
   let [cart, setCart] = useState([]);
@@ -29,7 +45,6 @@ export default function Checkout() {
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
   const [scenario, setScenario] = useState();
-  const [orderId, setOrderId] = useState();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -74,22 +89,16 @@ export default function Checkout() {
     setCountry(userData[0].country);
   };
 
-
   //Order submit handler
   const handleOrderSubmit = async (e) => {
     e.preventDefault();
 
     // create order
-    // const order = await handleCreateOrder();
-    // console.log("order", orderId.body)
-    const orderId = 1;
-    //handle stripe
-    handlePayOrder(orderId)
+    await handleCreateOrder();
 
-    console.log("submited");
   };
 
-   // handle inputs
+  // handle inputs
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
@@ -122,7 +131,8 @@ export default function Checkout() {
   };
 
   const handleCreateOrder = async () => {
-    const apiCart = cart.map((product) => product.id);
+    let apiCart = cart.map((product) => product.id);
+    apiCart = JSON.stringify(apiCart);
 
     const url =
       "https://bag-for-everyone.propulsion-learn.ch/backend/api/order/";
@@ -141,33 +151,25 @@ export default function Checkout() {
       shopping_note: note,
     };
 
-    console.log(body)
+    console.log(body);
 
     const config = {
       method: "POST",
       headers: new Headers({
         "Content-Type": "application/json",
       }),
-      body: JSON.stringify(body),
+      body: JSON.stringify(body)
     };
 
-    await fetch(url, config).then((response) => response.json())
-    .then((data) => console.log(data))
-    .then((data) => setOrderId(1))
-      
-    //   if (response.status < 400) {
-    //     setOrderId(response);
-    //     console.log("response from fetch: ", response);
-    //   } else {
-    //     console.log(response.json());
-    //   }
-    // });
-  // };
-  }
+    console.log(config)
+
+    await fetch(url, config)
+      .then((response) => response.json())
+      .then((data) => handlePayOrder(data.id));
+  };
 
   //stripe logic
-  const handlePayOrder = (orderId) => {
-    console.log("order id from stripe:", orderId)
+  const handlePayOrder = async (orderId) => {
     let stripeCart = [];
     const stripeCounter = {};
     cart.forEach((elem) => {
@@ -191,14 +193,12 @@ export default function Checkout() {
 
   const redirectToCheckout = async (list, orderId) => {
     const checkoutOptions = {
-      // lineItems: list,
-      lineItems: [{price: "price_1M2ygqIbEDX1qYr8ObgkRsnK", quantity: 1 }],
+      lineItems: list,
       mode: "payment",
       successUrl: `${window.location.origin}/orderconfirmation/${orderId}`,
-      cancelUrl: `${window.location.origin}/cancel`,
+      cancelUrl: `${window.location.origin}/checkout`,
     };
     setLoading(true);
-    // console.log("redirecting to checkout");
 
     const stripe = await getStripe();
 
@@ -215,7 +215,6 @@ export default function Checkout() {
     }
     return stripePromise;
   };
-
 
   //cart logic
   const handleAddToCart = (product) => {
@@ -336,7 +335,6 @@ export default function Checkout() {
                     placeholder="Country"
                     onChange={handleCountryChange}
                   ></input>
-
                 </AdressFormContainer>
                 <input
                   type="phone"
@@ -451,15 +449,20 @@ export default function Checkout() {
                 </TotalsContainer>
               </ShoppingCart>
 
-            <OrderButton type="submit" onClick={handleOrderSubmit}>Place Order</OrderButton>
-
-          </RightSide>
-        </CheckoutForm>
+              <OrderButton type="submit" onClick={handleOrderSubmit}>
+                Place Order
+              </OrderButton>
+            </RightSide>
+          </CheckoutForm>
           <StickyButtonDiv>
-                <button onClick={() => navigate("/story")}>Story</button>
+            <button onClick={() => navigate("/story")}>Story</button>
           </StickyButtonDiv>
-        <StockInfoModal isOpen={isOpen} scenario={scenario} onClick={resetIsOpen}/>
-      </CheckoutContainer>
+          <StockInfoModal
+            isOpen={isOpen}
+            scenario={scenario}
+            onClick={resetIsOpen}
+          />
+        </CheckoutContainer>
       </ModalProvider>
     </>
   );
