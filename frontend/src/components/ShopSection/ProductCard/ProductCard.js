@@ -20,7 +20,12 @@ function ProductCard(props) {
           <img className="preview" src={props.product.image} alt="product image - bag"></img>
           <div className="hide">Show more!</div>
         </AvatarContainer>
-        <Title>Shopper Bag</Title>
+        {
+          props.product.category === "SH" ?
+        <Title>Shopper Bag</Title> : props.product.category === "PO" ?
+        <Title>Essential Bag</Title> : <Title>{props.product.name}</Title> 
+        
+        }
         <Price>CHF {props.product.price}</Price>
       </CardContainer>
     </>
