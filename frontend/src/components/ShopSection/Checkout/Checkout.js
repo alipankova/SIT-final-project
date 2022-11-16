@@ -353,7 +353,7 @@ export default function Checkout() {
               </p>
 
               <FormTitle>3. Shipping Notes</FormTitle>
-              <p>
+              <p style={{paddingBottom: 0}}>
                 At this point you have the opportunity to provide us with any
                 additional order information. For example, specific color
                 requests for the "Essential Bag" product, special packaging
@@ -365,6 +365,7 @@ export default function Checkout() {
                 <textarea
                   name="shippingnotes"
                   value={note}
+                  style={{fontSize:"18px"}}
                   placeholder="Share your additional requests and comments... "
                   onChange={handleNoteChange}
                 ></textarea>
@@ -385,7 +386,7 @@ export default function Checkout() {
             </LeftSide>
             <RightSide>
               <ShoppingCart>
-                <span style={{ fontWeight: "bold", fontSize: "24px" }}>
+                <span style={{ fontWeight: "bold", fontSize: "28px", padding: "2rem 0 0 1rem", display:"flex", alignSelf:"center"}}>
                   Order Summary
                 </span>
                 <ProductGrid>

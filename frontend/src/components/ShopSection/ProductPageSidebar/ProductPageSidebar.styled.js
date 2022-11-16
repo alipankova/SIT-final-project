@@ -63,8 +63,8 @@ export const StickyCartContainer = styled.div`
 export const SidebarHeader = styled.div`
   display: flex;
   min-width: 100%;
-  /* align-items: center;
-  justify-content: center; */
+  align-items: center;
+  justify-content: space-around;
    
     p {
       display: flex;
@@ -92,6 +92,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 2rem;
   `
 
 export const ProductContainer = styled.div`
@@ -100,7 +101,8 @@ export const ProductContainer = styled.div`
     gap: 1rem;
 
   img {
-    width: 100px;
+    display: block;
+    width: 40%;
   }
 
   div {

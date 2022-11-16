@@ -5,6 +5,9 @@ import {
     TabsContainerDiv,
     TabsDiv,
     Signature,
+    ReactableLinks,
+    LinksDiv,
+    SocialMediaDivs
 } from './Footer.styles';
 import { 
     SlSocialInstagram,
@@ -42,35 +45,39 @@ const Footer = () => {
             <div id="fb-root"></div>
 <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v15.0" nonce="gi0i2cN5"></script>
                 <TabsContainerDiv>
+                <Signature style={{fontSize: "18px"}}>&copy;bagforeveryone 2022</Signature>
+                    <LinksDiv>
                     <TabsDiv>
-                    <p onClick={() => handleNavigateTo("team")}>Team</p>
+                    <ReactableLinks onClick={() => handleNavigateTo("team")}>Team</ReactableLinks>
                     </TabsDiv>
                     <TabsDiv>
-                        <p onClick={openStores}>Find Us</p>
+                        <ReactableLinks onClick={openStores}>Find Us</ReactableLinks>
                         <StyledStoreModal
                             isOpen={storesIsOpen}
                             onBackgroundClick={openStores}
                             allowScroll = {false}
                         >
                             <h1>Stores</h1>
-                            <p>Our bagforeveryone-Shopperbags also can be discovered, touched and experienced in Shops. We are happy to announce our first cooperation with the shop “Esperanto” in Rapperswill, where our sustainable, fairly produced bags are accesible. Our goal is to support shops with a product, who care for sustainable products and to raise awareness.</p>
+                            <p style={{paddingBottom: "2rem"}}>Our bagforeveryone-Shopperbags also can be discovered, touched and experienced in Shops. We are happy to announce our first cooperation with the shop “Esperanto” in Rapperswill, where our sustainable, fairly produced bags are accesible. Our goal is to support shops with a product, who care for sustainable products and to raise awareness.</p>
+                            <div>
                             <h3>Esperanto’s address</h3>
                             <p>Esperanto Rapperswil</p>
                             <p>Tiefenaustrasse</p> 
-                            <p>28640 Rapperswil</p>
+                            <p style={{paddingBottom: "2rem"}}>28640 Rapperswil</p>
+                            </div>
                             <h3>Is a Shopperbag from the store a donation?</h3>
                             <p>After purchaising a bag, you wont receive a receipt of a donation. But with your bag, you automatically support the project in lesvos and the refugees who crafted the bags. There are no shipping costs, but you support the Shop Owner. As well as refugees in lesvos, we also want to support Shop Owners, who support sustainable and social products. With presenting our the bagforeveryone-Shopperbags they support us to spread the message about the situation in Lesvos.</p>
                             </StyledStoreModal>
                     </TabsDiv>
                     <TabsDiv>
-                        <p onClick={toggleContact}>Contact Us</p>
+                        <ReactableLinks onClick={toggleContact}>Contact Us</ReactableLinks>
                         <StyledContactModal
                             isOpen={contactIsOpen}
                             onBackgroundClick={toggleContact}
                             allowScroll = {false}
                         >
                             <h1>Contact</h1>
-                            <p>This project is a cooperation of the two Non-Profit Organizations #EducationEveryone (CH) und Starfish Foundation (GR).</p>
+                            <p style={{width: "80%", textAlign:"center"}}>This project is a cooperation of the two Non-Profit Organizations #EducationEveryone (CH) und Starfish Foundation (GR).</p>
                             <AddressesDiv>
                                 <div>
                                     <h3>#EducationEveryone</h3>
@@ -93,6 +100,8 @@ const Footer = () => {
                             </AddressesDiv>
                         </StyledContactModal>
                     </TabsDiv>
+                    </LinksDiv>
+                    <SocialMediaDivs>
                     <TabsDiv>
                         <p>Follow Us</p>
                         <div className='social'>
@@ -121,8 +130,8 @@ const Footer = () => {
                         </a>
                          </div>
                     </TabsDiv>
+                    </SocialMediaDivs>
                 </TabsContainerDiv>
-                <Signature>&copy;bagforeveryone 2022</Signature>
             </FooterWrapperDiv>
             </ModalProvider>
         </>
@@ -134,17 +143,29 @@ const FadingBackground = styled(BaseModalBackground)`
 `; 
 
 const StyledStoreModal = Modal.styled`
-  width: 60vw;
-  height: 60vh;
+  max-width: 25%;
+  padding: 2rem;
   display: flex;
-  align-items: left;
+  align-items: center;
   flex-direction: column;
   color: #DABC39;
   background: #FFFFFF;
   border-radius: 15px;
   transition : all 0.3s ease-in-out;
   font-family: 'Montserrat', sans-serif;
-  padding: 0 20px 0 30px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+  }
+
+
+  p {
+    margin: 0;
+    text-align: center;
+  }
 
   h1 {
     font-size: 30px;
@@ -188,22 +209,29 @@ const StyledStoreModal = Modal.styled`
 `;
 
 const StyledContactModal = Modal.styled`
-  width: 40vw;
-  height: 45vh;
+
   display: flex;
-  align-items: left;
+  max-width: 25%;
+  align-items: center;
   flex-direction: column;
   color: #DABC39;
   background: #FFFFFF;
   border-radius: 15px;
   transition : all 0.3s ease-in-out;
   font-family: 'Montserrat', sans-serif;
-  padding: 0 20px 0 30px;
+  padding: 2rem;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5rem;
+  }
+
 
   h1 {
     font-size: 30px;
     color:#DABC39;
-    margin-bottom: 0;
+    margin: 0;
   }
   
   h3 {

@@ -6,13 +6,12 @@ import { BaseModalBackground } from "styled-react-modal";
 export const CheckoutContainer = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 8rem;
     align-items: flex-start;
-    margin: 8rem auto auto;
     max-width: 60%;
-    padding-bottom: 10rem;
+    padding: 8rem 0;
+    margin: 0 auto;
+
     /* padding-top: 12rem; */
-    margin-top: 12rem;
 
     p {
       margin: 0;
@@ -38,6 +37,12 @@ export const LeftSide = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 50%;
+
+  p {
+    font-size: 18px;
+    text-align: left;
+    padding-bottom: 2rem;
+  }
  
   @media screen and (max-width: 360px)  {
     max-width: 100%;
@@ -46,6 +51,7 @@ export const LeftSide = styled.div`
 
 export const FormTitle = styled.div`
     font-weight: bold;
+    font-size: 18px;
     padding: 1rem 0 0.5rem;
 `
 
@@ -55,6 +61,7 @@ export const ShippingForm = styled.div`
 
 input {
       font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
       padding: 1rem;
       margin: 0.5rem auto;
       border-radius: 1rem;
@@ -92,20 +99,36 @@ export const DeliveryInfoForm = styled.div`
 export const RightSide = styled.div`
     display: flex;
     flex-direction: column;
-    min-width: 50%;
-    padding: 1rem;
+    min-width: 60%;
+    padding: 3rem 0 0 10rem;
     gap: 1rem;
 
     @media screen and (max-width: 360px)  {
       position: fixed;
     }
 
-    button {
+
+`
+
+export const ShoppingCart = styled.div`
+
+  display: flex;
+  flex-direction: column;  
+  border-radius: 1rem;
+  background: #FAF5E1;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #DABC39;
+
+  button {
       font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      display: flex !important;
+      align-self: center !important;
       background:#DABC39;
       border: none;
       border-radius: 1rem;
-      padding: 0.5rem;
+      padding: 1rem 2rem;
       max-width: 50%;
       align-self: flex-start;
       cursor: pointer;
@@ -115,16 +138,6 @@ export const RightSide = styled.div`
       }
     }
 
-`
-
-export const ShoppingCart = styled.div`
-
-  display: flex;
-  flex-direction: column;  
-  background: #FAF5E1;
-  gap: 1rem;
-  padding: 1rem;
-  border: 1px solid #DABC39;
 `
 
 export const ProductGrid = styled.div`
@@ -139,55 +152,8 @@ export const Price = styled.div`
 @media screen and (max-width: 1200px)  {
       visibility: hidden;
     }
-
-
-
 `
 
-// export const Content = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   gap: 1rem;
-        
-//   span{
-//     font-size: 20px;
-//   }
-
-// `
-
-// export const ProductContainer = styled.div`
-
-//     display: flex;
-//     width: 100%;
-//     gap: 1rem;
-//     justify-content: space-between;
-
-//   img {
-//     width: 100px;
-//     height: 100px;
-//     object-fit: scale-down;
-//   }
-
-//   div {
-//       font-size: 20px;
-//       display: flex;
-//       flex-direction: column;
-//       align-items: flex-start;
-
-//     }
-
-//     button {
-//       padding: 0;
-//       margin: 0;
-//       width: 100%;
-//       height: 100%;
-//       border-radius: 1rem;
-//       border: 1px solid black;
-//       background: none;
-//       font-size: 24px;
-//       font-weight: bold;
-//     }
-// `
 export const CartItemControl = styled.div`
   display: flex;
   flex-direction: row !important;
@@ -242,6 +208,7 @@ export const Subtotal = styled.div`
 export const OrderButton = styled.button`
 
 font-family: 'Montserrat', sans-serif;
+  font-size: 24px !important;
   background:#DABC39;
   border: none;
   border-radius: 1rem;
@@ -266,9 +233,11 @@ export const ProductContainer = styled.div`
 
     display: flex;
     gap: 1rem;
+    padding: 2rem;
 
   img {
-    width: 100px;
+    display: block;
+    width: 30%;
   }
 
   div {
