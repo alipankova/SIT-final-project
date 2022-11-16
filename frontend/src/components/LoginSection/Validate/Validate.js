@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 import {
-    StyledButton,
     StyledInput,
     StyledLoginSectionContainer,
     StyledText,
     StyledTitle,
-    ErrorContainer
+    ErrorContainer,
+    LoginButton
 } from '../LoginSection.styled';
 
 import {
@@ -119,7 +119,7 @@ const Validate = () => {
                             <StyledInput type="password" placeholder="Repeat password" value={repeatPassword} onChange={(args) => setRepeatPassword(args.target.value)} />
                         </div>
                     </div>
-                    <StyledButton type='submit'>VALIDATE</StyledButton>
+                    <LoginButton type='submit'>VALIDATE</LoginButton>
 
                     {
                         error.length > 0 &&

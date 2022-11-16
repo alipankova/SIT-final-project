@@ -81,6 +81,10 @@ export const PageButton = styled.button`
         transform: scale(0.9);
         box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
     }
+
+    :hover {
+        opacity: 0.5;
+    }
    
 `
 

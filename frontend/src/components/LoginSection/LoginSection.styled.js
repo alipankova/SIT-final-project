@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { PageButton } from '../../styles/global.styles'
 
 export const StyledInput = styled.input`
 font-family: 'Montserrat';
@@ -22,25 +23,15 @@ padding-left: 36px;
 
 `;
 
-export const StyledButton = styled.button`
-font-family: 'Montserrat';
-background-color: #DABC39;
-border-radius: 15px;
-border-color:  #DABC39;
-font-style: solid;
-color: #000000;
-font-size: 24px;
-font-weight: 400;
-line-height: 34px;
-width: 158px;
-height: 34px;
-
-
-`;
+export const LoginButton = styled(PageButton)`
+    padding: .3rem 3rem;
+`
 
 export const StyledLoginSectionContainer = styled.div`
+    padding-top: 5rem;
     background-color: #FAF5E1;
-    height: 100vh;
+    display: flex;
+    height: 100%;
 `;
 
 export const StyledTitle = styled.div`

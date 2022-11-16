@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 import {
-    StyledButton,
     StyledInput,
     StyledLoginSectionContainer,
     StyledTitle,
-    ErrorContainer
+    ErrorContainer,
+    LoginButton
 } from '../LoginSection.styled';
 
 import {
@@ -64,7 +64,7 @@ const Register = () => {
                     Please register with your email address
                 </StyledTitle>
                 <StyledInput type="email" placeholder="Email address" value={emailAddress} onChange={(args) => setEmailAddress(args.target.value)} />
-                <StyledButton type='submit'>SIGN UP</StyledButton>
+                <LoginButton type='submit'>SIGN UP</LoginButton>
                     <ErrorContainer>
                         {
                             error.length > 0 && <span>{error}</span>

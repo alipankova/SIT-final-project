@@ -81,38 +81,6 @@ export const Statement = styled.h1`
         animation: fade-in 0.8s 1.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
     }
 
-    span:nth-child(15) {
-        animation: fade-in 0.8s 1.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
-    }
-
-    span:nth-child(16) {
-        animation: fade-in 0.8s 1.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
-    }
-
-    span:nth-child(17) {
-        animation: fade-in 0.8s 1.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
-    }
-
-    span:nth-child(18) {
-        animation: fade-in 0.8s 1.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
-    }
-
-    span:nth-child(19) {
-        animation: fade-in 0.8s 1.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
-    }
-
-    span:nth-child(20) {
-        animation: fade-in 0.8s 2.0s forwards cubic-bezier(0.11, 0, 0.5, 0);
-    }
-
-    span:nth-child(21) {
-        animation: fade-in 0.8s 2.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
-    }
-
-    span:nth-child(22) {
-        animation: fade-in 0.8s 2.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
-    }
-
     @keyframes fade-in {
         100% {
             opacity: 1;

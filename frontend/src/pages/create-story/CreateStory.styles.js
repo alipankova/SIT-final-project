@@ -54,5 +54,5 @@ export const FormWrapper = styled(StoryWrapper)`
 `
 
 export const PostButton = styled(PageButton)`
-    padding: .5em .8em;
+    padding: .3rem 3rem;
 `

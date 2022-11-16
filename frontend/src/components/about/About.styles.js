@@ -13,7 +13,7 @@ export const AboutContainerDiv = styled.div`
 `;
 
 export const ImageSliderDiv = styled.div` 
-    height: 100%;
+    /* height: 100%; */
 
     @media only screen and (max-width: 900px) {
         flex-direction: column;
