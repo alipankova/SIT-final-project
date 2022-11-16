@@ -9,10 +9,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function OrderConfirmation() {
-  const orderId = useParams();
+  const { orderId } = useParams();
   let [cart, setCart] = useState([]);
   let localCart = localStorage.getItem("cart");
-  const [after, setAfter] = useState();
 
   useEffect(() => {
     //get local cart details
@@ -22,25 +21,14 @@ export default function OrderConfirmation() {
 
   useEffect(() => {
     if (cart) {
+      //update the order status to paid
+      handleOrderStatusUpdate(orderId);
 
-    //update the order status to paid
-    //handleOrderStatusUpdate(orderId);
+      //get the product update set
+      const updateSet = handleGetStockUpdateSet();
 
-    //get the product update set
-    const updateSet = handleGetStockUpdateSet();
-    console.log("set: ", updateSet)
-
-    
-    //handle the stock updates
-    updateProductStocks(updateSet)
-
-    // updateSet.map(set => {
-    //   handleUpdateProductStock(set.product, set.amount)
-    // }   
-    // )
-    // localCart.removeItem("cart")
-
-
+      //handle the stock updates
+      updateProductStocks(updateSet);
     }
   }, [cart]);
 
@@ -54,6 +42,9 @@ export default function OrderConfirmation() {
       method: "PATCH",
       headers: new Headers({
         "Content-Type": "application/json",
+        Authorization: `Bearer ${
+          JSON.parse(localStorage.getItem("bagsAuth")).bagsToken
+        }`,
       }),
       body: bodyData,
     };
@@ -61,27 +52,20 @@ export default function OrderConfirmation() {
     fetch(
       `https://bag-for-everyone.propulsion-learn.ch/backend/api/order/${orderId}/`,
       config
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {});
-
+    ).then((response) => {
+      return response.json();
+    });
   };
 
   const updateProductStocks = (updateSet) => {
-
-    updateSet.map(set => {
-      handleUpdateProductStock(set.product, set.amount)
-    }   
-    )
+    updateSet.map((set) => {
+      handleUpdateProductStock(set.product, set.amount);
+    });
 
     localStorage.removeItem("cart")
-
-  }
+  };
 
   const handleGetStockUpdateSet = () => {
-    
     const productsReduced = cart?.filter(
       (value, index, self) =>
         index ===
@@ -90,16 +74,10 @@ export default function OrderConfirmation() {
         )
     );
 
-    console.log(productsReduced)
-
     let productAmountSet = [];
     productsReduced?.forEach((product) => {
-      const amount = cart?.filter(
-        (item) => item?.id === product?.id
-      ).length;
-
-      console.log("amount: ", amount);
-
+      const amount = cart?.filter((item) => item?.id === product?.id).length;
+      
       let obj = {
         product: product,
         amount: amount,
@@ -112,7 +90,6 @@ export default function OrderConfirmation() {
   };
 
   const handleUpdateProductStock = (product, amountSold) => {
-    
     const stockUpdateData = {
       stock: product.stock - parseInt(amountSold),
     };
@@ -125,7 +102,7 @@ export default function OrderConfirmation() {
         "Content-Type": "application/json",
         // Authorization: `Bearer ${
         //   JSON.parse(localStorage.getItem("bagsAuth")).bagsToken
-        // }`,        
+        // }`,
       }),
       body: bodyData,
     };
@@ -138,7 +115,6 @@ export default function OrderConfirmation() {
         return response.json();
       })
       .then((data) => {});
-
   };
 
   return (
