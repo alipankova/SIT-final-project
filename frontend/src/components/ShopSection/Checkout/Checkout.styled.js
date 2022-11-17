@@ -190,7 +190,7 @@ export const TotalsContainer = styled.div`
 export const Separator = styled.div`
   min-width: 100%;
   height: 0.1rem;
-  background: #DABC39;;
+  background: #DABC39;
 
 `
 
@@ -227,23 +227,22 @@ export const Content = styled.div`
   `
 
 export const ProductContainer = styled.div`
-
+    border: 1px solid rgba(218, 188, 57, 0.3);
+    border-radius: 1rem;
     display: flex;
     gap: 1rem;
     padding: 1rem;
-    height: fit-content;
 
   img {
     display: block;
-    width: 50%;
-    height: 50%;
+    max-width: 100px;
+    max-height: 100px; 
   }
 
   div {
-      font-size: 20px;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       gap: 0.5rem;
 
     }
@@ -256,8 +255,9 @@ export const ProductContainer = styled.div`
     }
 
     .ellipsis {
-
       overflow: hidden;
+      font-size: 16px;
+      text-align: s;
       white-space: nowrap;
       width: 80%;
       text-overflow: ellipsis;
@@ -267,7 +267,6 @@ export const ProductContainer = styled.div`
 
 export const AddRemoveContainer = styled.div`
         flex-direction: row !important;
-        gap: 1.5rem !important;
         border: 1px solid #DABC39;
 
         div {
@@ -286,3 +285,16 @@ opacity: ${(props) => props.opacity};
 transition: all 0.3s ease-in-out;
 `;
 
+export const ImageContainer = styled.div`
+        display: flex;
+        align-items: center !important;
+        justify-content: center;
+        min-width: 100px;
+        min-height: 100px;
+`
+export const DetailsContainer = styled.div`
+
+
+
+
+`
