@@ -15,6 +15,7 @@ import {
 import {
     StyledRegisterContainer
 } from './Register.styled';
+import { LoginImage } from '../Login/Login.styled';
 
 const Register = () => {
 
@@ -55,6 +56,7 @@ const Register = () => {
 
     return (
         <StyledLoginSectionContainer>
+            <LoginImage />
             <StyledRegisterContainer onSubmit={onSubmit}>
                 <StyledTitle className='register-title'>
                     <strong>
