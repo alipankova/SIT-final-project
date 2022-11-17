@@ -6,7 +6,7 @@ export const StyledRegisterContainer = styled.form`
     justify-content: center;
     align-items: center;
     gap: 39px;
-    height: 100%;
+    width: 50%;
     .register-title {
         margin-bottom: 22px;
     }

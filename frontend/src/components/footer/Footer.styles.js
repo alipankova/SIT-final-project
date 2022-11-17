@@ -19,6 +19,7 @@ export const FooterWrapperDiv = styled.div`
     svg {
         margin: 0 .5em;
         color: #DABC39;
+        font-size: 20px;
     }
 `;
 
