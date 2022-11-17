@@ -8,6 +8,7 @@ export const CommentWrapper = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-size: 1.3em;
 
     .comment-header {
         display: flex;

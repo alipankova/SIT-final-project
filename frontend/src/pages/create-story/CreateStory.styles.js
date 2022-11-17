@@ -34,6 +34,18 @@ export const CreateStoryWrapper = styled.section `
         border-radius: 5px; 
         font-family: 'Montserrat', sans-serif;
     }
+
+    .form-input {
+            width: 50%;
+            height: 2em;
+            font-size: 1em;
+        }
+
+        textarea {
+            width: 95%;
+            height: 10em;
+            font-size: 1em;
+        }
 `
 
 export const CreateStoryUserHeader = styled(UserHeader)`

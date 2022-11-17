@@ -28,6 +28,18 @@ export const CreateStoryWrapper = styled.section `
             border-radius: 5px; 
             font-family: 'Montserrat', sans-serif;
         }
+
+        .form-input {
+            width: 50%;
+            height: 2em;
+            font-size: 1em;
+        }
+
+        textarea {
+            width: 95%;
+            height: 10em;
+            font-size: 1em;
+        }
     }
 
     .modal-story-button {
@@ -51,9 +63,4 @@ export const CreateStoryWrapper = styled.section `
 export const FormWrapper = styled(StoryWrapper)`
     gap: 1em;
     padding: 1em;
-
-    textarea {
-        width: 95%;
-        height: 10em;
-    }
 `
