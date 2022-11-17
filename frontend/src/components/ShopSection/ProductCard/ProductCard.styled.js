@@ -16,39 +16,34 @@ export const CardContainer = styled.div`
 
 export const AvatarContainer = styled.div`
   position: relative;
-
-  max-width: 100%;
-
-  .preview {
-    max-width: 100%;
-    object-fit: cover;
-  }
-
-  div {
-   display: flex;
-   justify-content: center;
-   font-size: 36px;
-   padding-top: 1rem;
-   opacity: 0;
-   color: white;
-   min-width: 100%;
-   object-fit: cover;
-   height: 99.5%;
-   position: absolute;
-   top: 0;
-   left: 0;
-   background: black;
-
-  }
-      div:hover {
-         opacity: 0.2;
-   }
-
+  padding: 0;
+  margin: 0;
+  
   img {
-    width: 100%;
+    /* display: block;*/
+    display: block;
+    width: 300px;
   }
-`;
 
+    .hide {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      opacity: 0;
+      color: white;
+      font-size: 28px;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      background-color: rgba(0,0,0, 0.3);
+      :hover {
+        opacity: 1;
+      }
+    }
+
+`;
 
 export const Title = styled.span`
   font-weight: bold;
