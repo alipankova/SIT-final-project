@@ -143,7 +143,7 @@ const FadingBackground = styled(BaseModalBackground)`
 `; 
 
 const StyledStoreModal = Modal.styled`
-  max-width: 25%;
+  max-width: 30%;
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -211,7 +211,7 @@ const StyledStoreModal = Modal.styled`
 const StyledContactModal = Modal.styled`
 
   display: flex;
-  max-width: 25%;
+  max-width: 30%;
   align-items: center;
   flex-direction: column;
   color: #DABC39;

@@ -106,7 +106,6 @@ return (
                 </IconContext.Provider>
                 <p>Cart</p>
               </SidebarHeader>
-              {/* <Cart/> */}
               <Content>
                 <>
                 {
@@ -161,7 +160,13 @@ return (
             },
           }}
         >
-          <StickyCartContainer onClick={() => onSetSidebarOpen(true)}>
+          <Catalog page={pageRouting}/>
+          <StickyButtonDiv>
+                <button onClick={() => navigate("/story")}>Story</button>
+          </StickyButtonDiv>
+        </Sidebar>
+        <StockInfoModal isOpen={isOpen} scenario={scenario} onClick={resetIsOpen}/>
+        <StickyCartContainer onClick={() => onSetSidebarOpen(true)}>
             <IconContext.Provider value={{ size: "100px" }}>
               <BsCart2 />
             </IconContext.Provider>
@@ -172,12 +177,6 @@ return (
               }
               </div>
           </StickyCartContainer>
-          <Catalog page={pageRouting}/>
-          <StickyButtonDiv>
-                <button onClick={() => navigate("/story")}>Story</button>
-          </StickyButtonDiv>
-        </Sidebar>
-        <StockInfoModal isOpen={isOpen} scenario={scenario} onClick={resetIsOpen}/>
       </PageSection>
       </ModalProvider>
     </>
