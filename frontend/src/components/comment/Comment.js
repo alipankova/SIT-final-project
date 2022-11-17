@@ -34,7 +34,6 @@ const Comment = ({ id, pageId, user, created, content }) => {
       fetch(url, config)
           .then(response => response.json())
           .then(data => setLoggedInUser(data))
-          .catch(error => console.log(error))
     }
   }, [])
 

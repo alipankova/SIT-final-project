@@ -18,7 +18,6 @@ const CreateComment = () => {
 
     const handleCommentCreate = e => {
         e.preventDefault();
-        console.log(comment)
         // after successful posting:
         const cleanUp = () => {
             setCreated(false);

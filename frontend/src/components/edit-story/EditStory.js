@@ -25,7 +25,6 @@ const EditStory = props => {
         fetch(url, config)
             .then(response => response.json())
             .then(data => setLoggedInUser(data))
-            .catch(error => console.log(error))
     }, []);
 
     const navigate = useNavigate();

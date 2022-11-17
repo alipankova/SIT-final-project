@@ -24,11 +24,11 @@ function StripeCheckout() {
 
     const redirectToCheckout = async () => {
         setLoading(true);
-        console.log("redirecting to checkout");
+        // console.log("redirecting to checkout");
 
         const stripe = await getStripe();
         const { error } = await stripe.redirectToCheckout(checkoutOptions);
-        console.log("Stripe checkout error", error)
+        // console.log("Stripe checkout error", error)
 
         if (error) setStripeError(error.message);
         setLoading(false);

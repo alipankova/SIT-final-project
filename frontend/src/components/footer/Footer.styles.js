@@ -2,104 +2,77 @@ import styled from "styled-components";
 // import "@fontsource/montserrat";
 
 export const FooterWrapperDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.2), 0px 0px 1px rgba(0, 0, 0, 0.15);
-    display: block;
-    
-    box-sizing: border-box;
+    position: fixed;
     bottom: 0;
     left: 0;
-    max-height: 70px;
-    width: 100vw;
-    align-items: center;
+    width: 100%;
     background: rgba(255, 255, 255, 1);
-    position: fixed;
-    overflow: hidden;
 
     p {
         margin: 0;
+        padding: 0;
     }
-`;
-
-export const TabsContainerDiv = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    *{
-    color: #1E1E1E;
-    font-family: 'Montserrat', sans-serif; 
-    font-size: 16px;
-    line-height: 0.5;
-    }
-
-    @media screen and (max-width: 900px) {
-        width: 90vw;
-        margin-left: 10vw;
-        *{ 
-        font-size: 10px;
-        }   
-    }
-`;
-
-export const TabsDiv = styled.div`
-    flex-direction: column;
-    align-items: center;
-    padding: 0 5rem;
-  
-    *{
-        margin-right: 5px;
-    }
-
-    p {
-        margin: 1rem 0;
-    }
-
     svg {
-        margin-bottom: 1rem;
-        :hover{
-            color: red;  
-        }
+        margin: 0 .5em;
+        color: #DABC39;
     }
+`;
 
-    @media screen and (max-width: 480px) {
-        *{ 
-        font-size: 10px;
-        }   
-    }
+export const TabsShare = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    padding: .5em;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+`;
+
+export const TabsFollow = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    padding: .5em;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
 `;
 
 export const Signature = styled.div`
+    display: flex;
+    padding: 0 1em;
+    justify-content: flex-start;
+    font-size: 12px;
+    align-items: center;
     color: black;
-    font-size: 10px;
+    width: 20%;
+    
 
-    @media screen and (max-width: 480px) {
-        font-size: 4px;
-        
-    }
 `;
 
-export const ReactableLinks = styled.p`
+export const FootLink = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;                
+    width: 20%;
     cursor: pointer;
     font-size: 18px;
+
     :hover{
         color: #DABC39;
         }
 
 `
 
-export const LinksDiv = styled.div`
+export const SocialLinks = styled.div`
     display: flex;
 
-    div {
-        font-size: 18px;
-    }
-  
-`
+    :hover{
+        color: #DABC39;
+        }
 
-export const SocialMediaDivs = styled.div`
-    display:flex;
-
-    *{
-        font-size: 18px;
-    }
 `

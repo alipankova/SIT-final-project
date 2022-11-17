@@ -32,7 +32,6 @@ const CreateNewProduct = () => {
     
         const handleUpload = e => {
             const imageUrl = e.target.files;
-            // console.log(e.target.files)
             setProductImage(imageUrl[0]);
           }
           
@@ -62,7 +61,6 @@ const CreateNewProduct = () => {
                     setTimeout(() => navigate('/'), 2000)
                     return data.response
                 })
-                .catch(error => console.log(error))
         }
    
         return (

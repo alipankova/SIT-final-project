@@ -36,7 +36,6 @@ const StoryPage = () => {
   const toggleDeleteModal = () => {
         setIsOpen(!isOpen);
   }
-  console.log(loggedInUser);
 
   const handleOptionClick = () => {
     setShowOptions(!showOptions);
@@ -73,7 +72,6 @@ const StoryPage = () => {
       fetch(url, config)
           .then(response => response.json())
           .then(data => setLoggedInUser(data))
-          .catch(error => console.log(error))
     }
   }, [])
 
