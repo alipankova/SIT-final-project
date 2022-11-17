@@ -23,12 +23,12 @@ class User(AbstractUser):
         (FEMALE, "Female"),
         (OTHER, "Other"),
     ]
-    username = models.TextField(max_length=50)
+    username = models.TextField(max_length=50, blank=True)
     email = models.EmailField(unique=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    first_name = models.TextField(max_length=50)
-    last_name = models.TextField(max_length=50)
+    first_name = models.TextField(max_length=50, blank=True)
+    last_name = models.TextField(max_length=50, blank=True)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, blank=True)
     street = models.TextField(max_length=50, blank=True)
     street_number = models.IntegerField(blank=True, null=True)
