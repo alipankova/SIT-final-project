@@ -3,20 +3,14 @@ import styled from "styled-components";
 // this is the overall page wrapper inside the body.
 // With 'display: flex' on the body, it was acting weird.
 export const PageWrapper = styled.div `
-    /* border: 2px solid green; */
     margin: 0 auto;
     display: flex;
     width: 90%;
-    height: calc(100vh - 140px);
+    height: 100%;
     gap: .5em;
-    padding: .5em;
+    padding: 4em .5em;
     flex-direction: column;
     align-items: center;
-
-    @media (min-width: 1000px) {
-        margin-top: 70px;
-        margin-bottom: 70px;
-    }
     
 `
 // background covering dark div for readability:

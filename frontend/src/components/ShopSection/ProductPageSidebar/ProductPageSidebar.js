@@ -57,13 +57,14 @@ export default function ProductPageSidebar(props) {
   useEffect(() => {
 
     localCart = JSON.parse(localCart);
-    if (localCart) {       
-      setCart(localCart) 
-      setCartAmount(localCart.length) 
-    } else {
-      setCartAmount(0)
+    if (localCart) {
+        setCart(localCart)
+        setCartAmount(localCart.length)
     }
+    else { setCartAmount(0) }
 
+ 
+    
 
     
   }, [JSON.parse(localCart)?.length])

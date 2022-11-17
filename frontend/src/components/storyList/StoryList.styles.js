@@ -6,20 +6,26 @@ import { PageButton } from '../../styles/global.styles'
 // mobile designs first (480px width and less):
 export const StoryPageWrapper = styled.section `
     display: flex;
-    margin-top: 1.5em;
-    border: 1px solid lightgray;
+    position: fixed;
+    top: 10em;
     overflow-y: scroll;
     flex-direction: column;
     justify-content: flex-start; 
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 73%;
     gap: .5em;
-    padding: .5em;
+    padding: 1em .5em;
     border-radius: 7px;
-    
+   
     // whole searchbar with magnifier and post button:
     .search {
-        
+        z-index: 1;
+        border: 2px solid lightgray;
+        padding: 1em;
+        border-radius: 10px;
+        background-color: white;
+        position: sticky;
+        top: 0;
         min-width: 65%;
         margin: 0 auto;
         display: flex;
