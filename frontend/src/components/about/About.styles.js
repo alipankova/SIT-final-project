@@ -62,14 +62,17 @@ export const TextBoxDiv = styled.div`
         color: #DABC39;
         font-family: 'Montserrat', sans-serif;
         font-size: 30px;
-        margin-bottom: 0;
+        margin: 1rem 0;
         align-self: center;
     }
 
     p {
         color: #000000;
         font-family: 'Montserrat', sans-serif;
-        font-size: 16px;
+        font-size: 1.5rem;
+        text-align: center;
+        max-width: 80%;
+        margin: 2rem auto;
         
     }
 
@@ -96,5 +99,5 @@ export const TextBoxDiv = styled.div`
             width: 100vw;
         }
     }
-`;  
+`;
 

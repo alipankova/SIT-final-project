@@ -7,8 +7,11 @@ export const PageHeader = styled.div`
     align-items: center;
     margin-top: 10rem;
     p {
-      font-size: 24px;
+      font-size: 1.5em;
+      padding: 0 3rem;
     }
+    justify-content: center;
+    text-align: center;
 `;
 
 export const CatalogGrid = styled.div`

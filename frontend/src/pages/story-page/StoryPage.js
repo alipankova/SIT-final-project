@@ -13,7 +13,6 @@ import EditStory from '../../components/edit-story/EditStory';
 
 const StoryPage = () => {
 
-  const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
   const { id } = useParams();
   
   const navigate = useNavigate();
@@ -46,6 +45,7 @@ const StoryPage = () => {
 
   const handleStoryDelete = () => {
     // Delete the post:
+    const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
       const url = `https://bag-for-everyone.propulsion-learn.ch/backend/api/post/${id}/`;
       const config = {
           method: "DELETE",
@@ -60,28 +60,30 @@ const StoryPage = () => {
     })
   }
 
-  // fetch logged-in user:
+  // fetch logged-in user if there is a token:
   useEffect(() => {
-    const url = "https://bag-for-everyone.propulsion-learn.ch/backend/api/user/me/";
-    const config = {
-        method: "GET",
-        headers: {          
-            "Authorization": `Bearer ${localToken}`
-        }
+    if (localStorage.getItem("bagsAuth") !== null) {
+      const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
+      const url = "https://bag-for-everyone.propulsion-learn.ch/backend/api/user/me/";
+      const config = {
+          method: "GET",
+          headers: {          
+              "Authorization": `Bearer ${localToken}`
+          }
+      }
+      fetch(url, config)
+          .then(response => response.json())
+          .then(data => setLoggedInUser(data))
+          .catch(error => console.log(error))
     }
-    fetch(url, config)
-        .then(response => response.json())
-        .then(data => setLoggedInUser(data))
-        .catch(error => console.log(error))
-  }, []);
+  }, [])
 
   // fetch current story:
   useEffect(() => {
     const config = {
       method: "GET",
       headers: new Headers ({
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${localToken}`
+        "Content-Type": "application/json"
       })
     };
   fetch(`https://bag-for-everyone.propulsion-learn.ch/backend/api/post/${id}/`, config)
@@ -94,14 +96,13 @@ const StoryPage = () => {
     const config = {
       method: "GET",
       headers: new Headers ({
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${localToken}`
+        "Content-Type": "application/json"
       })
     };
   fetch(`https://bag-for-everyone.propulsion-learn.ch/backend/api/post/comment/list/`, config)
   .then(response => response.json())
-  // .then(data => {setComments(data)});
-  .then(data => {setComments(data.filter(elem => elem.post == id))});
+  // .then(data => {setComments(data.filter(elem => elem.post == id))});
+  .then(data => console.log(data));
   }, []);
 
   return (
@@ -141,7 +142,7 @@ const StoryPage = () => {
                   </StoryImages>
 
                   {/* COMMENTS SECTION */}
-                  <CommentButton onClick={() => navigate(`/comment/create/${id}`)}>POST A NEW COMMENT</CommentButton>
+                  {loggedInUser && <CommentButton onClick={() => navigate(`/comment/create/${id}`)}>POST A NEW COMMENT</CommentButton>}
                   <Collapsible trigger={comments.length !== 0 ? "Show/ Hide comments" : "There are currently no comments."}>
                     { comments && displayComments }
                   </Collapsible>
