@@ -38,7 +38,7 @@ const MissionModal = () => {
                             <span>made</span>
                             <span>with</span>
                             <span>love</span>
-                            <span>from</span>
+                            <span>by</span>
                             <span>refugees</span>
                             <span>in</span>
                             <span>Lesvos &#9825;.'</span>

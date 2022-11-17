@@ -64,8 +64,8 @@ const CreateComment = () => {
     return (
         <CreateCommentWrapper>
                     <FormWrapper>
-                        <PageButton 
-                            className='close-comment' 
+                        <PageButton
+                            className='close-comment'
                             onClick={() => navigate(`/story/${id}`)}
                         >X</PageButton>
                         <label>

@@ -22,7 +22,7 @@ const ImageSlider = ({slides}) => {
 
     const leftArrowStyles = {
         position: 'absolute',
-        top: 'calc(50% - 5rem)',
+        top: '50%',
         transform: 'translate(0, -50%)',
         left: '20vw',
         fontSize: '5em',
@@ -33,7 +33,7 @@ const ImageSlider = ({slides}) => {
     
     const rightArrowStyles = {
         position: 'absolute',
-        top: 'calc(50% - 5rem)',
+        top: '50%',
         transform: 'translate(0, -50%)',
         right: '20vw',
         fontSize: '5em',

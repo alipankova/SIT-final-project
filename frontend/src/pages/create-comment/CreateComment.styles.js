@@ -13,11 +13,13 @@ export const CreateCommentWrapper = styled(StoryWrapper) `
         align-self: flex-start;
         margin-top: 1em;
         margin-left: 1em;
+        padding: .1rem .4rem;
     }
-
 `
 
 export const FormWrapper = styled(StoryWrapper)`
+    border: 1px solid lightgray;
+    border-radius: 5px;
     width: 60%;
     gap: 1em;
     padding: 1em;

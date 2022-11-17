@@ -25,6 +25,7 @@ export const CreateStoryWrapper = styled.section `
         align-self: flex-start;
         margin-top: 1em;
         margin-left: 1em;
+        padding: .1rem .4rem;
     }
 
     .select {
@@ -44,12 +45,19 @@ export const CreateStoryUserHeader = styled(UserHeader)`
 `
 
 export const FormWrapper = styled(StoryWrapper)`
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 1em;
     gap: 1em;
     min-width: 60%;
 
     textarea {
         width: 95%;
         height: 10em;
+    }
+
+    .form-input {
+        width: 95%;
     }
 `
 

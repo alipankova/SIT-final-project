@@ -3,6 +3,7 @@ import { OptionsMenu, UserButton } from "../../pages/story-page/StoryPage.styles
 
 export const CommentWrapper = styled.div`
     border: 1px solid lightgray;
+    margin-top: 1rem;
     padding: .2rem;
     display: flex;
     align-items: center;

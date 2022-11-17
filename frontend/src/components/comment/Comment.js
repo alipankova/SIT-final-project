@@ -9,11 +9,9 @@ DeleteWarningModal } from '../../pages/story-page/StoryPage.styles';
 
 const Comment = ({ id, pageId, user, created, content }) => {
 
-  const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
   const navigate = useNavigate();
   const [loggedInUser, setLoggedInUser] = useState('');
   const [showOptions, setShowOptions] = useState(false);
-  console.log(pageId)
 
   // Delete Comment MODAL settings:
   const [isOpen, setIsOpen] = useState(false);
@@ -22,27 +20,30 @@ const Comment = ({ id, pageId, user, created, content }) => {
         setIsOpen(!isOpen);
   }
 
-  // fetch logged-in user:
+  // fetch logged-in user if there is a token:
   useEffect(() => {
-    const url = "https://bag-for-everyone.propulsion-learn.ch/backend/api/user/me/";
-    const config = {
-        method: "GET",
-        headers: {          
-            "Authorization": `Bearer ${localToken}`
-        }
+    if (localStorage.getItem("bagsAuth") !== null) {
+      const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
+      const url = "https://bag-for-everyone.propulsion-learn.ch/backend/api/user/me/";
+      const config = {
+          method: "GET",
+          headers: {          
+              "Authorization": `Bearer ${localToken}`
+          }
+      }
+      fetch(url, config)
+          .then(response => response.json())
+          .then(data => setLoggedInUser(data))
+          .catch(error => console.log(error))
     }
-    fetch(url, config)
-        .then(response => response.json())
-        .then(data => setLoggedInUser(data))
-        .catch(error => console.log(error))
-  }, []);
+  }, [])
 
   const handleOptionClick = () => {
     setShowOptions(!showOptions);
   }
 
   const handleCommentDelete = e => {
-    console.log(id)
+    const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
     // Delete the comment:
       const url = `https://bag-for-everyone.propulsion-learn.ch/backend/api/post/comment/id/${id}`;
       const config = {
@@ -83,7 +84,7 @@ const Comment = ({ id, pageId, user, created, content }) => {
         <div className='comment-header'>
             <img src='../assets/images/user/avatar.png' alt='user avatar'></img>
             <div className='commenter-info'>
-              <span>User: {user}</span>
+              {/* <span>User: {`${user.first_name} ${user.last_name.substring(0, 1)}.`}</span> */}
               <span>Posted: {created.substring(0, 10)}</span>
             </div>
         </div>

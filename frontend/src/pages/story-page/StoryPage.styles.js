@@ -5,6 +5,7 @@ import Modal from "styled-react-modal";
 
 export const CloseButton = styled(PageButton) `
     margin: 1em 0 1em 1em;
+    padding: .02rem .4rem;
     align-self: flex-start;
 `
 
@@ -196,3 +197,10 @@ export const CommentButton = styled(PageButton)`
     padding: .5em 1em;
     font-size: 1.2;
 `;
+
+export const Comments = styled.div `
+    padding: 2em;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+`
