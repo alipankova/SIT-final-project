@@ -7,11 +7,10 @@ export const CheckoutContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    max-width: 60%;
-    padding: 8rem 0;
-    margin: 0 auto;
-
-    /* padding-top: 12rem; */
+    position: relative;
+    max-width: 70%;
+    padding: 6rem 0;
+    margin: 0  auto;
 
     p {
       margin: 0;
@@ -98,15 +97,12 @@ export const DeliveryInfoForm = styled.div`
 `
 export const RightSide = styled.div`
     display: flex;
+    position: sticky;
+    top: 8rem !important;
     flex-direction: column;
     min-width: 60%;
-    padding: 3rem 0 0 10rem;
+    padding: 3rem 4rem;
     gap: 1rem;
-
-    @media screen and (max-width: 360px)  {
-      position: fixed;
-    }
-
 
 `
 
@@ -115,6 +111,7 @@ export const ShoppingCart = styled.div`
   display: flex;
   flex-direction: column;  
   border-radius: 1rem;
+  min-width: 100%;
   background: #FAF5E1;
   gap: 1rem;
   padding: 1rem;
@@ -233,11 +230,13 @@ export const ProductContainer = styled.div`
 
     display: flex;
     gap: 1rem;
-    padding: 2rem;
+    padding: 1rem;
+    height: fit-content;
 
   img {
     display: block;
-    width: 30%;
+    width: 50%;
+    height: 50%;
   }
 
   div {
@@ -248,6 +247,22 @@ export const ProductContainer = styled.div`
       gap: 0.5rem;
 
     }
+
+    span {
+      font-size: 16px;
+      text-align: center;
+      white-space: nowrap;
+
+    }
+
+    .ellipsis {
+
+      overflow: hidden;
+      white-space: nowrap;
+      width: 80%;
+      text-overflow: ellipsis;
+    }
+
 `
 
 export const AddRemoveContainer = styled.div`

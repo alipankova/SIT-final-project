@@ -408,7 +408,10 @@ export default function Checkout() {
                               alt="product in cart"
                             ></img>
                             <div>
+                              { product?.name.length > 15 ?
+                              <span className="ellipsis">{product?.name}</span> :
                               <span>{product?.name}</span>
+                              }
                               <span>CHF {product?.price}</span>
                               <AddRemoveContainer>
                                 <div onClick={() => handleAddToCart(product)}>

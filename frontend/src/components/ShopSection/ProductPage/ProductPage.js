@@ -154,13 +154,11 @@ function ProductPage(props) {
     if (product.stock === 0) {
       setScenario("out of stock")
       toggleModal()
-      // alert("Product currently out of Stock")
     }
 
     else if (parseInt(amountToCart) > product.stock) {
       setScenario("low stock")
       toggleModal()
-      // alert("The desired order quantity exceeds the available quantity")
     }
 
     else {
@@ -186,6 +184,9 @@ function ProductPage(props) {
     }
 
     setAmountToCart(1);
+    console.log(JSON.parse(localCart)?.length)
+    
+    props.onClick(JSON.parse(localCart)?.length)
 
   };
 
@@ -338,7 +339,7 @@ function ProductPage(props) {
               <IconContext.Provider value={{ size: "30px" }}>
                 <IoShareSocialSharp />
               </IconContext.Provider>
-              <span>Share this product</span>
+              <span>Copy Sharelink of product!</span>
             </ShareContainer>
           </Details>
         </ProductContainer>

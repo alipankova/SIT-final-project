@@ -7,14 +7,13 @@ export const PageContainer = styled.div`
     display: flex;
     flex-direction : column;
     margin: 0 auto;
-    padding-bottom: 10rem;
-    margin-top: 8rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 `
 
 export const NavigateContainer = styled.div`
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
 
     span {
         padding: 1rem;
@@ -35,26 +34,6 @@ export const BackToCatalogContainer = styled.div`
         }
 `
 
-
-export const SwitchProductContainer = styled.div`
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    /* gap: 1rem; */
-    cursor: pointer;
-
-    :hover{
-            color: #DABC39;
-        }
-`
-
-export const AlternateProductAvatar = styled.img`
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-`
-
-
 export const ProductContainer = styled.div`
     display: flex;
     align-items: flex-start;
@@ -69,7 +48,7 @@ export const MediaContainer = styled.div`
 `
 
 export const Avatar = styled.img`
-    width: 400px;
+    width: 300px;
     border-radius: 1rem;
 
 `
@@ -80,7 +59,7 @@ export const ImageGallery = styled.div`
 
 `
 export const GalleryItem = styled.img`
-    width: 70px;
+    width: 60px;
     border-radius: 1rem;
     cursor: pointer;
 
@@ -102,7 +81,6 @@ export const DetailDiv = styled.div`
     flex-direction: column;
     gap: 0.5rem;
     font-size: 20px;
-    /* padding-bottom: 3rem; */
 
     .Collapsible {
         display: flex;

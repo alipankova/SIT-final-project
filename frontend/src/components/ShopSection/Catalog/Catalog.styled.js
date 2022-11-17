@@ -14,11 +14,9 @@ export const PageHeader = styled.div`
 export const CatalogGrid = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    font-weight: 400;
     margin: 0 auto;
-    gap: 5rem;
-    max-width: 1000px;
-    padding-bottom: 10rem;
+    max-width: 50%;
+    padding-bottom: 6rem;
 
     @media screen and (max-width: 1300px)  {
       grid-template-columns: 1fr;

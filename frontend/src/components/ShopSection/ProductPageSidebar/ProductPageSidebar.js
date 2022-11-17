@@ -33,12 +33,10 @@ export default function ProductPageSidebar(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
   const [scenario, setScenario] = useState();
+  const [cartAmount, setCartAmount] = useState();
 
 
   useEffect(() => {
-
-    localCart = JSON.parse(localCart);
-    if (localCart) setCart(localCart);
 
    const config = {
       method: "GET",
@@ -54,7 +52,23 @@ export default function ProductPageSidebar(props) {
       .then((data) => {
         setProducts(data);
       });
-  }, [JSON.parse(localCart)?.length]);
+  }, []);
+
+  useEffect(() => {
+
+    localCart = JSON.parse(localCart);
+    if (localCart) setCart(localCart) ;
+
+ 
+    setCartAmount(localCart.length)
+
+    
+  }, [JSON.parse(localCart)?.length])
+  
+
+  const getCartAmount = (amount) => {
+    setCartAmount(amount+1)
+  }
 
 
   const handleAddToCart = (product) => {
@@ -181,12 +195,15 @@ export default function ProductPageSidebar(props) {
             </IconContext.Provider>
             <div>
               {
-                JSON.parse(localCart)?.length != undefined ?
-                JSON.parse(localCart)?.length : 0
+                cartAmount !== undefined ?
+                cartAmount : 
+                0
+                // JSON.parse(localCart)?.length != undefined ?
+                // JSON.parse(localCart)?.length : 0
               }
             </div>
           </StickyCartContainer>
-          <ProductPage products={products} category={props.category}/>
+          <ProductPage products={products} category={props.category} onClick={getCartAmount}/>
           <StickyButtonDiv>
                 <button onClick={() => navigate("/story")}>Story</button>
           </StickyButtonDiv>
