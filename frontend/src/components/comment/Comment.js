@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { DeleteModalProvider, FadingBackground,
 DeleteWarningModal } from '../../pages/story-page/StoryPage.styles';
 
-const Comment = ({ id, pageId, user, created, content }) => {
+const Comment = ({ id, commenter, created, content }) => {
 
   const navigate = useNavigate();
   const [loggedInUser, setLoggedInUser] = useState('');
@@ -65,7 +65,7 @@ const Comment = ({ id, pageId, user, created, content }) => {
   return (
     <CommentWrapper>
       { loggedInUser ?
-        loggedInUser[0].id === user &&
+        loggedInUser[0].id === commenter &&
         <CommenterButton>
           <SlOptionsVertical 
             className='options-icon'
@@ -83,7 +83,7 @@ const Comment = ({ id, pageId, user, created, content }) => {
         <div className='comment-header'>
             <img src='../assets/images/user/avatar.png' alt='user avatar'></img>
             <div className='commenter-info'>
-              {/* <span>User: {`${user.first_name} ${user.last_name.substring(0, 1)}.`}</span> */}
+              <span>User: {`${commenter}`}</span>
               <span>Posted: {created.substring(0, 10)}</span>
             </div>
         </div>

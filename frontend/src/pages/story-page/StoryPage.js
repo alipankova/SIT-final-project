@@ -22,10 +22,10 @@ const StoryPage = () => {
   const [displayEdit, setDisplayEdit] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState('');
   const [comments, setComments] = useState([]);
-  const displayComments = comments.map(elem => <Comment  
+  const displayComments = comments.map(elem => <Comment
                                                   key={elem.id}
                                                   id={elem.id}
-                                                  user={elem.commenter.id}
+                                                  commenter={elem.commenter.first_name}
                                                   created={elem.created}
                                                   content={elem.content}
                                                 />)
