@@ -18,6 +18,8 @@ import {
   OrderButton,
   ProductGrid,
   FadingBackground,
+  ImageContainer,
+  DetailsContainer
 } from "./Checkout.styled.js";
 import { useEffect, useState } from "react";
 import { ModalProvider } from "styled-react-modal";
@@ -403,11 +405,13 @@ export default function Checkout() {
                       return (
                         <>
                           <ProductContainer key={idx}>
+                            <ImageContainer>
                             <img
                               src={product?.image}
                               alt="product in cart"
                             ></img>
-                            <div>
+                            </ImageContainer>
+                            <DetailsContainer>
                               { product?.name.length > 15 ?
                               <span className="ellipsis">{product?.name}</span> :
                               <span>{product?.name}</span>
@@ -417,18 +421,19 @@ export default function Checkout() {
                                 <div onClick={() => handleAddToCart(product)}>
                                   +
                                 </div>
+                                <div>
                                 {
                                   cart?.filter(
                                     (item) => item?.id === product?.id
                                   ).length
-                                }
+                                }</div>
                                 <div
                                   onClick={() => handleRemoveFromCart(product)}
                                 >
                                   -
                                 </div>
                               </AddRemoveContainer>
-                            </div>
+                            </DetailsContainer>
                           </ProductContainer>
                         </>
                       );
