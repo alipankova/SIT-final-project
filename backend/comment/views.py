@@ -10,6 +10,7 @@ User = get_user_model()
 
 
 class ListCommentView(ListAPIView):
+    permission_classes = []
     serializer_class = CommentSerializer
     queryset = Comment.objects.all()
 

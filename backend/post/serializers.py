@@ -12,10 +12,10 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = '__all__'
 
-    # def to_representation(self, instance):
-    #     representation = super().to_representation(instance)
-    #     representation['owner'] = RepresentationUserSerializer(instance.owner, many=False).data
-    #     return representation
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        representation['author'] = UserSerializer(instance.author, many=False).data
+        return representation
 
 
 class NewPostSerializer(serializers.ModelSerializer):
