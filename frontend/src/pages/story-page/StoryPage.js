@@ -60,21 +60,23 @@ const StoryPage = () => {
     })
   }
 
-  // fetch logged-in user:
-  const fetchUser = () => {
-    const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
-    const url = "https://bag-for-everyone.propulsion-learn.ch/backend/api/user/me/";
-    const config = {
-        method: "GET",
-        headers: {          
-            "Authorization": `Bearer ${localToken}`
-        }
+  // fetch logged-in user if there is a token:
+  useEffect(() => {
+    if (localStorage.getItem("bagsAuth") !== null) {
+      const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
+      const url = "https://bag-for-everyone.propulsion-learn.ch/backend/api/user/me/";
+      const config = {
+          method: "GET",
+          headers: {          
+              "Authorization": `Bearer ${localToken}`
+          }
+      }
+      fetch(url, config)
+          .then(response => response.json())
+          .then(data => setLoggedInUser(data))
+          .catch(error => console.log(error))
     }
-    fetch(url, config)
-        .then(response => response.json())
-        .then(data => setLoggedInUser(data))
-        .catch(error => console.log(error))
-  }
+  }, [])
 
   // fetch current story:
   useEffect(() => {
@@ -99,8 +101,8 @@ const StoryPage = () => {
     };
   fetch(`https://bag-for-everyone.propulsion-learn.ch/backend/api/post/comment/list/`, config)
   .then(response => response.json())
-  // .then(data => {setComments(data)});
-  .then(data => {setComments(data.filter(elem => elem.post == id))});
+  // .then(data => {setComments(data.filter(elem => elem.post == id))});
+  .then(data => console.log(data));
   }, []);
 
   return (
