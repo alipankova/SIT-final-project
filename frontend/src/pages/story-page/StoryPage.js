@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { StoryWrapper, CloseButton, UserHeader, UserButton,
    OptionsMenu, ContentWrapper, StoryImages, FullImageModal, Image,
   DarkBackground, CloseModalButton, DeleteModalProvider, FadingBackground,
-DeleteWarningModal, CommentButton } from '../../pages/story-page/StoryPage.styles';
+DeleteWarningModal, CommentButton, Comments } from '../../pages/story-page/StoryPage.styles';
 import { PageButton } from '../../styles/global.styles';
 import Comment from '../../components/comment/Comment';
 import { SlOptionsVertical } from 'react-icons/sl';
@@ -22,12 +22,10 @@ const StoryPage = () => {
   const [displayEdit, setDisplayEdit] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState('');
   const [comments, setComments] = useState([]);
-  
   const displayComments = comments.map(elem => <Comment  
                                                   key={elem.id}
                                                   id={elem.id}
-                                                  pageId={id}
-                                                  user={elem.commenter}
+                                                  user={elem.commenter.id}
                                                   created={elem.created}
                                                   content={elem.content}
                                                 />)
@@ -38,6 +36,7 @@ const StoryPage = () => {
   const toggleDeleteModal = () => {
         setIsOpen(!isOpen);
   }
+  console.log(loggedInUser);
 
   const handleOptionClick = () => {
     setShowOptions(!showOptions);
@@ -101,8 +100,7 @@ const StoryPage = () => {
     };
   fetch(`https://bag-for-everyone.propulsion-learn.ch/backend/api/post/comment/list/`, config)
   .then(response => response.json())
-  // .then(data => {setComments(data.filter(elem => elem.post == id))});
-  .then(data => console.log(data));
+  .then(data => {setComments(data.filter(elem => elem.post == id))});
   }, []);
 
   return (
@@ -114,15 +112,15 @@ const StoryPage = () => {
                     <div className='user-display'>
                       <img src={'../assets/images/user/avatar.png'} alt='user avatar'></img>
                       <div className='user-info'>
-                        <span>Author: {story.author}</span>
-                        <span>Created on: {story ? story.created.substring(0, 10) : ''}
+                        <span>Author: {story && `${story.author.first_name} ${story.author.last_name.substring(0, 1)}.`}</span>
+                        <span>Created on: {story && story.created.substring(0, 10)}
                         </span>
                       </div>
                     </div>
                     {/* The User button (edit, delete, cancel) will only show if the
                     Author is the logged-in user: */}
-                    { loggedInUser ?
-                    loggedInUser[0].id === story.author &&
+                    { loggedInUser && story ?
+                    loggedInUser[0].id === story.author.id &&
                       <UserButton>
                       <SlOptionsVertical onClick={handleOptionClick} className='options-icon'/>
                       {showOptions && <OptionsMenu>
@@ -135,18 +133,21 @@ const StoryPage = () => {
                 </UserHeader>
                 <ContentWrapper>
                   <section className='story-content'>
-                      <p>{story.content}</p>
+                      <p>{story && story.content}</p>
                   </section>
                   <StoryImages onClick={() => setImageModal('flex')}>
                     <img src={story.image} alt="description"></img>
                   </StoryImages>
-
-                  {/* COMMENTS SECTION */}
-                  {loggedInUser && <CommentButton onClick={() => navigate(`/comment/create/${id}`)}>POST A NEW COMMENT</CommentButton>}
-                  <Collapsible trigger={comments.length !== 0 ? "Show/ Hide comments" : "There are currently no comments."}>
-                    { comments && displayComments }
-                  </Collapsible>
                 </ContentWrapper>
+                <Comments>
+                  {/* COMMENTS SECTION */}
+                  {loggedInUser && <CommentButton onClick={() => {
+                    navigate(`/comment/create/${id}`)
+                    }}>POST A NEW COMMENT</CommentButton>}
+                    <Collapsible trigger={comments.length !== 0 ? "Show/ Hide comments +" : "There are currently no comments."}>
+                      { comments && displayComments }
+                    </Collapsible>
+                </Comments>
               </div>
           <FullImageModal style={{display: imageModal}}>
             <CloseModalButton onClick={() => setImageModal('none')}>X</CloseModalButton>

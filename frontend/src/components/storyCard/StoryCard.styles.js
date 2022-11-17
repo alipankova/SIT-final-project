@@ -26,6 +26,7 @@ export const StoryWrapper = styled.section `
                 margin: 0;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 padding: 0 1em;
                 font-size: 2em;
                 opacity: 0;

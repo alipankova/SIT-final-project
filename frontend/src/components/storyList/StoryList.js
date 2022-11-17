@@ -10,7 +10,6 @@ import { PageButton } from '../../styles/global.styles';
 const StoryList = () => {
 
   const [stories, setStories] = useState([]);
-  console.log(stories);
   // check for token in local storage:
   const localToken = localStorage.getItem("bagsAuth");
   const navigate = useNavigate();
@@ -18,7 +17,6 @@ const StoryList = () => {
   //MODAL SETTINGS
   const [isOpen, setIsOpen] = useState(false);
   const [searchParam, setSearchParam] = useState('');
-  console.log(searchParam);
   const toggleModal = () => {
         setIsOpen(!isOpen);
   }
