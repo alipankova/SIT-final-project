@@ -184,7 +184,7 @@ function ProductPage(props) {
     }
 
     setAmountToCart(1);
-    console.log(JSON.parse(localCart)?.length)
+    // console.log(JSON.parse(localCart)?.length)
     
     props.onClick(JSON.parse(localCart)?.length)
 

@@ -153,8 +153,6 @@ export default function Checkout() {
       shopping_note: note,
     };
 
-    console.log(body);
-
     const config = {
       method: "POST",
       headers: new Headers({
@@ -162,8 +160,6 @@ export default function Checkout() {
       }),
       body: JSON.stringify(body)
     };
-
-    console.log(config)
 
     await fetch(url, config)
       .then((response) => response.json())
@@ -205,7 +201,7 @@ export default function Checkout() {
     const stripe = await getStripe();
 
     const { error } = await stripe.redirectToCheckout(checkoutOptions);
-    console.log("Stripe checkout error", error);
+    // console.log("Stripe checkout error", error);
 
     if (error) setStripeError(error.message);
     setLoading(false);
@@ -240,7 +236,6 @@ export default function Checkout() {
   const handleRemoveFromCart = (product) => {
     let cartCopy = [...cart];
     const index = cartCopy.map((object) => object.id).indexOf(product.id);
-    console.log(index);
     cartCopy.splice(index, 1);
 
     setCart(cartCopy);

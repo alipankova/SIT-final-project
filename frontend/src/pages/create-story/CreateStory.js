@@ -21,7 +21,6 @@ const CreateStory = () => {
         fetch(url, config)
             .then(response => response.json())
             .then(data => setLoggedInUser(data))
-            .catch(error => console.log(error))
     }, []);
 
     const navigate = useNavigate();
@@ -98,7 +97,6 @@ const CreateStory = () => {
             .then(data => {
                 setTimeout(cleanUp, 2000);
             })
-            .catch(error => console.log(error))
     }
 
     return (

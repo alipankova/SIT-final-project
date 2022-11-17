@@ -44,13 +44,12 @@ const Login = () => {
 
         fetch(url, config)
         .then((response) => {
-            console.log(response)
             if (response.status === 200) {
                 const json = response.json();
-                return json
+                return json;
             }
             else {
-                console.log(response.json())
+                // console.log(response.json())
             }
         })
         .then(data => { setToken(data.access) });
@@ -64,7 +63,7 @@ const Login = () => {
             }
 
             localStorage.setItem("bagsAuth", JSON.stringify(jsObject));
-            console.log("the token was stored to local storage");
+            // console.log("the token was stored to local storage");
             navigate("/about")
         }
       }, [token]);

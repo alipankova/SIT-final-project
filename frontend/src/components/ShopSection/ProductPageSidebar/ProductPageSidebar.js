@@ -98,7 +98,6 @@ export default function ProductPageSidebar(props) {
 
     let cartCopy = [...cart];
     const index = cartCopy.map(object => object.id).indexOf(product.id)
-    // console.log(index)
     cartCopy.splice(index, 1)
 
 
@@ -112,10 +111,8 @@ export default function ProductPageSidebar(props) {
   };
 
   function toggleModal(e) {
-    console.log("toggled")
     setOpacity(0);
     setIsOpen(!isOpen);
-    console.log(isOpen)
   }
 
   const resetIsOpen = () => {

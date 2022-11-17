@@ -26,7 +26,6 @@ function Cart(props) {
   const handleRemoveFromCart = (product) => {
     let cartCopy = [...cart];
     const index = cartCopy.map((object) => object.id).indexOf(product.id);
-    console.log(index);
     cartCopy.splice(index, 1);
 
     setCart(cartCopy);
