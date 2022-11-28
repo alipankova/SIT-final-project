@@ -12,6 +12,9 @@ export default function OrderConfirmation() {
   const { orderId } = useParams();
   let [cart, setCart] = useState([]);
   let localCart = localStorage.getItem("cart");
+  const baseURLDev = "http://localhost:8001/backend/api/"
+  const baseURLProd = "https://bag-for-everyone.propulsion-learn.ch/backend/api/"
+
 
   useEffect(() => {
     //get local cart details
@@ -50,7 +53,7 @@ export default function OrderConfirmation() {
     };
 
     fetch(
-      `https://bag-for-everyone.propulsion-learn.ch/backend/api/order/${orderId}/`,
+      `${baseURLDev}order/${orderId}/`,
       config
     ).then((response) => {
       return response.json();
@@ -108,7 +111,7 @@ export default function OrderConfirmation() {
     };
 
     fetch(
-      `https://bag-for-everyone.propulsion-learn.ch/backend/api/product/${product.id}/`,
+      `${baseURLDev}product/${product.id}/`,
       config
     )
       .then((response) => {

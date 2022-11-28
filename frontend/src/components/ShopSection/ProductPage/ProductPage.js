@@ -49,6 +49,9 @@ function ProductPage(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
   const [scenario, setScenario] = useState();
+  const baseURLDev = "http://localhost:8001/backend/api/"
+  const baseURLProd = "https://bag-for-everyone.propulsion-learn.ch/backend/api/"
+
 
 
   useEffect(() => {

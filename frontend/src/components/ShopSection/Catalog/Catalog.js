@@ -10,8 +10,9 @@ function Catalog(props) {
   const [after, setAfter] = useState([])
   const [page, setPage] = useState()
   const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5NjQwNjYwLCJpYXQiOjE2NjgwODU0NjAsImp0aSI6IjU4NjNkOWY1MjUxZDRiNzM4NzY0NTc3MTNkZWI3YTk5IiwidXNlcl9pZCI6MX0.9gMDpZdC1yI3Os1QWDpmDOU-KU1XVeo-m-Qz-nuYiBQ";
-
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjE4NjI4LCJpYXQiOjE2Njk2NjM0MjgsImp0aSI6IjZiNDY4ZmI1MDM2NDQwMzhiZDU2ZGQ0ODc4OTA3MDk0IiwidXNlcl9pZCI6MX0.M1BVtqdVGmNlQYPPA79pFN7RK23VxrtyiybJ5rkErJs";
+  const baseURLDev = "http://localhost:8001/backend/api/"
+  const baseURLProd = "https://bag-for-everyone.propulsion-learn.ch/backend/api/"
 
   useEffect(() => {
 
@@ -22,7 +23,7 @@ function Catalog(props) {
         Authorization: `Bearer ${token}`,
       }),
     };
-    fetch("https://bag-for-everyone.propulsion-learn.ch/backend/api/product/", config)
+    fetch(`${baseURLDev}product/`, config)
       .then((response) => {
         return response.json();
       })

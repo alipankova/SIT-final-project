@@ -6,7 +6,9 @@ export default function UpdateProductStock() {
   const [updateValue, setUpdateValue] = useState();
   const [refresh, setRefresh] = useState(false);
   const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5NjQwNjYwLCJpYXQiOjE2NjgwODU0NjAsImp0aSI6IjU4NjNkOWY1MjUxZDRiNzM4NzY0NTc3MTNkZWI3YTk5IiwidXNlcl9pZCI6MX0.9gMDpZdC1yI3Os1QWDpmDOU-KU1XVeo-m-Qz-nuYiBQ";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjE4NjI4LCJpYXQiOjE2Njk2NjM0MjgsImp0aSI6IjZiNDY4ZmI1MDM2NDQwMzhiZDU2ZGQ0ODc4OTA3MDk0IiwidXNlcl9pZCI6MX0.M1BVtqdVGmNlQYPPA79pFN7RK23VxrtyiybJ5rkErJs";
+  const baseURLDev = "http://localhost:8001/backend/api/"
+  const baseURLProd = "https://bag-for-everyone.propulsion-learn.ch/backend/api/"
 
 
   useEffect(() => {
@@ -18,7 +20,7 @@ export default function UpdateProductStock() {
         Authorization: `Bearer ${token}`,
       }),
     };
-    fetch("https://bag-for-everyone.propulsion-learn.ch/backend/api/product/category/SH/", config)
+    fetch(`${baseURLDev}product/category/SH/`, config)
       .then((response) => {
         return response.json();
       })
@@ -38,7 +40,6 @@ export default function UpdateProductStock() {
 
 
     const stockUpdateData = {
-      // stock: 4
       stock: product.stock + parseInt(updateValue)
     }
 
@@ -53,7 +54,7 @@ export default function UpdateProductStock() {
       body: bodyData
     };
 
-    fetch(`https://bag-for-everyone.propulsion-learn.ch/backend/api/product/${product.id}/`, config)
+    fetch(`${baseURLDev}product/${product.id}/`, config)
       .then((response) => {
         return response.json();
       })
@@ -77,7 +78,7 @@ export default function UpdateProductStock() {
               {  product.stock > 5 ?
               <ElementContainer key={idx} style={{background: "rgba(0, 128, 0, 0.25)"}} >
 
-                <img src={product.image} />
+                <img src={product.image}></img>
                 <ContentContainer>
                   <div>Name: {product.name}</div>                
                   <p>Current in stock:

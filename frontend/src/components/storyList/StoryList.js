@@ -10,6 +10,9 @@ import { PageButton } from '../../styles/global.styles';
 const StoryList = () => {
 
   const [stories, setStories] = useState([]);
+  const baseURLDev = "http://localhost:8001/backend/api/"
+  const baseURLProd = "https://bag-for-everyone.propulsion-learn.ch/backend/api/"
+
   // check for token in local storage:
   const localToken = localStorage.getItem("bagsAuth");
   const navigate = useNavigate();
@@ -23,7 +26,7 @@ const StoryList = () => {
   
   // fetch all stories:
   useEffect(() => {
-      fetch("https://bag-for-everyone.propulsion-learn.ch/backend/api/post/").then(response => {
+      fetch(`${baseURLDev}post/`).then(response => {
         return response.json();
       }).then(data => {
         setStories(data)});
@@ -47,7 +50,7 @@ const StoryList = () => {
 
   // search by keyword through titles/content
   const handleSearch = () => {
-    fetch(`https://bag-for-everyone.propulsion-learn.ch/backend/api/post/?search=${searchParam}`).then(response => {
+    fetch(`${baseURLDev}post/?search=${searchParam}`).then(response => {
       return response.json();
     }).then(data => {
       setStories(data)});

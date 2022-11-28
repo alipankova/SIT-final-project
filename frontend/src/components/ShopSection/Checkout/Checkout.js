@@ -48,6 +48,9 @@ export default function Checkout() {
   const [opacity, setOpacity] = useState(0);
   const [scenario, setScenario] = useState();
   const navigate = useNavigate();
+  const baseURLDev = "http://localhost:8001/backend/api/"
+  const baseURLProd = "https://bag-for-everyone.propulsion-learn.ch/backend/api/"
+
 
   useEffect(() => {
     localCart = JSON.parse(localCart);
@@ -55,7 +58,7 @@ export default function Checkout() {
 
     if (localStorage.getItem("bagsAuth")) {
       const url =
-        "https://bag-for-everyone.propulsion-learn.ch/backend/api/user/me/";
+        `${baseURLDev}user/me/`;
 
       const config = {
         method: "GET",
@@ -137,7 +140,7 @@ export default function Checkout() {
     apiCart = JSON.stringify(apiCart);
 
     const url =
-      "https://bag-for-everyone.propulsion-learn.ch/backend/api/order/";
+      `${baseURLDev}order/`;
 
     const body = {
       products: apiCart,

@@ -29,6 +29,8 @@ const StoryPage = () => {
                                                   created={elem.created}
                                                   content={elem.content}
                                                 />)
+  const baseURLDev = "http://localhost:8001/backend/api/"
+  const baseURLProd = "https://bag-for-everyone.propulsion-learn.ch/backend/api/"                                           
 
   // Delete MODAL settings:
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +46,7 @@ const StoryPage = () => {
   const handleStoryDelete = () => {
     // Delete the post:
     const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
-      const url = `https://bag-for-everyone.propulsion-learn.ch/backend/api/post/${id}/`;
+      const url = `${baseURLDev}post/${id}/`;
       const config = {
           method: "DELETE",
           headers: {          
@@ -62,7 +64,7 @@ const StoryPage = () => {
   useEffect(() => {
     if (localStorage.getItem("bagsAuth") !== null) {
       const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
-      const url = "https://bag-for-everyone.propulsion-learn.ch/backend/api/user/me/";
+      const url = `${baseURLDev}user/me/`;
       const config = {
           method: "GET",
           headers: {          
@@ -83,7 +85,7 @@ const StoryPage = () => {
         "Content-Type": "application/json"
       })
     };
-  fetch(`https://bag-for-everyone.propulsion-learn.ch/backend/api/post/${id}/`, config)
+  fetch(`${baseURLDev}post/${id}/`, config)
   .then(response => response.json())
   .then(data => {setStory(data)});
   }, []);
@@ -96,7 +98,7 @@ const StoryPage = () => {
         "Content-Type": "application/json"
       })
     };
-  fetch(`https://bag-for-everyone.propulsion-learn.ch/backend/api/post/comment/list/`, config)
+  fetch(`${baseURLDev}post/comment/list/`, config)
   .then(response => response.json())
   .then(data => {setComments(data.filter(elem => elem.post == id))});
   }, []);

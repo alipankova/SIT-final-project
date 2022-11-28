@@ -8,10 +8,12 @@ const CreateStory = () => {
 
     const [loggedInUser, setLoggedInUser] = useState('');
     const localToken = (JSON.parse(localStorage.getItem("bagsAuth"))).bagsToken;
+    const baseURLDev = "http://localhost:8001/backend/api/"
+    const baseURLProd = "https://bag-for-everyone.propulsion-learn.ch/backend/api/"
 
     // fetch logged-in user:
     useEffect(() => {
-        const url = "https://bag-for-everyone.propulsion-learn.ch/backend/api/user/me/";
+        const url = `${baseURLDev}user/me/`;
         const config = {
             method: "GET",
             headers: {          
@@ -67,7 +69,7 @@ const CreateStory = () => {
         formData.append("title", storyData.title);
         formData.append("content", storyData.content);
         formData.append("image", storyImage);
-        const url = "https://bag-for-everyone.propulsion-learn.ch/backend/api/post/"
+        const url = `${baseURLDev}post/`
         const config = {
             method: "POST",
             headers: {

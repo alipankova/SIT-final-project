@@ -11,6 +11,9 @@ const CreateComment = () => {
     const [comment, setComment] = useState('');
     const navigate = useNavigate();
     const [created, setCreated] = useState(false);
+    const baseURLDev = "http://localhost:8001/backend/api/"
+    const baseURLProd = "https://bag-for-everyone.propulsion-learn.ch/backend/api/"
+  
 
     const handleCommentChange = e => {
         setComment(e.target.value);
@@ -27,7 +30,7 @@ const CreateComment = () => {
             })
             navigate(`/story/${id}`);
         }
-        const url = `https://bag-for-everyone.propulsion-learn.ch/backend/api/post/comment/new/${id}/`
+        const url = `${baseURLDev}post/comment/new/${id}/`
         const requestBody = {              
             content: comment         
         }

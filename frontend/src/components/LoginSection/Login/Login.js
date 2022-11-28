@@ -22,12 +22,14 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [token, setToken] = useState("")
+    const baseURLDev = "http://localhost:8001/backend/api/"
+    const baseURLProd = "https://bag-for-everyone.propulsion-learn.ch/backend/api/"
 
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const url = "https://bag-for-everyone.propulsion-learn.ch/backend/api/auth/token/"
+        const url = `${baseURLDev}auth/token/`
 
         const jsBody = {
             "email": email,
