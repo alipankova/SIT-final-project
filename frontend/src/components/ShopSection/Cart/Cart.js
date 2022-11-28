@@ -8,6 +8,7 @@ function Cart(props) {
   let localCart = localStorage.getItem("cart");
 
 
+
   useEffect(() => {
     setCart(props.cart)
     localCart = JSON.parse(localCart);
