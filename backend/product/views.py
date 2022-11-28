@@ -1,13 +1,11 @@
 from django.contrib.auth import get_user_model
 from django.db.models import Q
 from rest_framework.generics import ListAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView, GenericAPIView
-from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser, AllowAny
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
 from rest_framework.response import Response
-
 
 from product.models import Product
 from product.serializer import ProductSerializer, CreateProductSerializer, CategorySerializer
-
 
 User = get_user_model()
 
@@ -45,7 +43,7 @@ class RetrieveUpdateDeleteProductView(RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     lookup_url_kwarg = 'id'
 
-    permission_classes = [AllowAny]
+    permission_classes = []
 
 
 class ListCategoryView(ListAPIView):
