@@ -29,6 +29,7 @@ export default function ProductPageSidebar(props) {
   let [cart, setCart] = useState([]);
   let localCart = localStorage.getItem("cart");
   const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjcwODk2LCJpYXQiOjE2Njk3MTU2OTYsImp0aSI6IjYwYWNmMGMwYWQ0ZjRjYjk5NTU0YzMyZmVjODM1YzE2IiwidXNlcl9pZCI6MX0.slOIv0ZmsOtD4qGratVVWsD8CfDpDbOM_jyC3sCb6FQ"
+  const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
   const [scenario, setScenario] = useState();
   const [cartAmount, setCartAmount] = useState();
