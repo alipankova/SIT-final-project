@@ -2,10 +2,10 @@ import { Content, ProductContainer, AddRemoveContainer } from './Cart.styled';
 import {useState, useEffect} from 'react';
 
 
-
 function Cart(props) {
   let [cart, setCart] = useState([]);
   let localCart = localStorage.getItem("cart");
+
 
 
   useEffect(() => {
