@@ -31,8 +31,6 @@ export default function Shop() {
   const navigate = useNavigate();
   const {page} = useParams();
   const [pageRouting, setPageRouting] = useState()
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5NjQwNjYwLCJpYXQiOjE2NjgwODU0NjAsImp0aSI6IjU4NjNkOWY1MjUxZDRiNzM4NzY0NTc3MTNkZWI3YTk5IiwidXNlcl9pZCI6MX0.9gMDpZdC1yI3Os1QWDpmDOU-KU1XVeo-m-Qz-nuYiBQ";
   const [isOpen, setIsOpen] = useState(false);
   const [opacity, setOpacity] = useState(0);
   const [scenario, setScenario] = useState();
