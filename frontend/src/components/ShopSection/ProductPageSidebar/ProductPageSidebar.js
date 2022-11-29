@@ -28,9 +28,7 @@ export default function ProductPageSidebar(props) {
   const navigate = useNavigate();
   let [cart, setCart] = useState([]);
   let localCart = localStorage.getItem("cart");
-  const token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY5NjQwNjYwLCJpYXQiOjE2NjgwODU0NjAsImp0aSI6IjU4NjNkOWY1MjUxZDRiNzM4NzY0NTc3MTNkZWI3YTk5IiwidXNlcl9pZCI6MX0.9gMDpZdC1yI3Os1QWDpmDOU-KU1XVeo-m-Qz-nuYiBQ";
-  const [isOpen, setIsOpen] = useState(false);
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMjcwODk2LCJpYXQiOjE2Njk3MTU2OTYsImp0aSI6IjYwYWNmMGMwYWQ0ZjRjYjk5NTU0YzMyZmVjODM1YzE2IiwidXNlcl9pZCI6MX0.slOIv0ZmsOtD4qGratVVWsD8CfDpDbOM_jyC3sCb6FQ"
   const [opacity, setOpacity] = useState(0);
   const [scenario, setScenario] = useState();
   const [cartAmount, setCartAmount] = useState();
