@@ -6,7 +6,7 @@ export const PageContainer = styled.div`
 display: flex;
 min-width: 100%;
 flex-direction: column;
-padding-top: 15rem;
+padding-top: 6rem;
 align-items: center;
 justify-content: center;
 `
