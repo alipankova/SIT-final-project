@@ -20,67 +20,65 @@ Adding some **Social Media** flair with the option to post **Stories** and a **C
 
 ### Stories
 
-![Stories](assets/Stories.png)
+![Stories](https://github.com/alipankova/SIT-final-project/assets/112779525/c94fd143-c809-4a26-9e03-cc242847742c)
 
 
 ### Shop Overview 
 
-![Shop Overview](https://github.com/alipankova/SIT-final-project/assets/112779525/d4b6a152-8561-4edc-840c-9092499fb2d8)
+![Shop Overview](https://github.com/alipankova/SIT-final-project/assets/112779525/fdc60221-fbf4-4a1a-b424-18c89e2ffa65)
 
 
 ### Detailed Product View 1
 
-![Red Bag](https://github.com/alipankova/SIT-final-project/assets/112779525/56114b06-54d9-4a61-bc97-a26564fe0086)
+![Red Bag](https://github.com/alipankova/SIT-final-project/assets/112779525/c3f374e0-f148-4ddf-80b4-ea79ad88e04a)
 
 
 ### Detailed Product View 2
 
-![Green Bag](https://github.com/alipankova/SIT-final-project/assets/112779525/5fc406f5-7c0d-4f46-bf96-d2abaf9418c8)
+![Green Bag](https://github.com/alipankova/SIT-final-project/assets/112779525/e693ce9a-9641-4df2-8548-6e1f1c2db44e)
 
 
 ### Shopping Cart
 
-![Cart](https://github.com/alipankova/SIT-final-project/assets/112779525/dae2f327-a514-4b6c-9a60-41ba28fd910c)
+![Cart](https://github.com/alipankova/SIT-final-project/assets/112779525/c5cabd00-2146-40cf-adc3-2c42a2339779)
 
 
 ### Checkout
 
-![Checkout](https://github.com/alipankova/SIT-final-project/assets/112779525/b79b64a3-6045-412d-9201-9fae2bec37ca)
+![Checkout](https://github.com/alipankova/SIT-final-project/assets/112779525/e1894904-2e23-42ac-a432-b10dea45b079)
 
 
 ### Payment
-![Payment](https://github.com/alipankova/SIT-final-project/assets/112779525/34b2ed6b-2520-428c-b0a5-9f61ceee0685)
 
+![Payment](https://github.com/alipankova/SIT-final-project/assets/112779525/1ce01f32-3dc3-4617-8805-a8f5ea9cf32e)
 
 
 ### Confirmation
 
-![Confirmation](https://github.com/alipankova/SIT-final-project/assets/112779525/af557027-56dd-4534-a8cc-bba5bfe536b2)
+![Confirmation](https://github.com/alipankova/SIT-final-project/assets/112779525/923df3b5-b106-45d9-9c8b-cb6e35954364)
 
 
 ### Login
 
-![Login](https://github.com/alipankova/SIT-final-project/assets/112779525/a8b0e02d-978a-4f22-ac77-106265723b6b)
+![Login](https://github.com/alipankova/SIT-final-project/assets/112779525/80f3cf1e-69c1-44e4-b2f3-6489e61c7910)
 
 
 ### Welcoming Message
 
-![Message](https://github.com/alipankova/SIT-final-project/assets/112779525/f9e53eae-5d68-4002-9288-58b13b25ddc8)
+![Message](https://github.com/alipankova/SIT-final-project/assets/112779525/6cf0827e-f3ac-40f4-a914-c0082980bdde)
 
 
 ### Donations
 
-![Donations](https://github.com/alipankova/SIT-final-project/assets/112779525/e9332734-b5ed-4413-b819-a22c7dcf7319)
-
+![Donations](https://github.com/alipankova/SIT-final-project/assets/112779525/9a621f79-6d94-43a4-82ca-8f44fe687c47)
 
 ### About Page 1
 
-![About](https://github.com/alipankova/SIT-final-project/assets/112779525/3fadf879-3432-4061-89ae-f82b22f3b802)
-
+![About](https://github.com/alipankova/SIT-final-project/assets/112779525/fde0d5b2-b70d-4dfc-811a-ff002c98987b)
 
 ### About Page 2
 
-![Statistics](https://github.com/alipankova/SIT-final-project/assets/112779525/b63b203a-68f2-4857-822c-df3fad00b42c)
+![Statistics](https://github.com/alipankova/SIT-final-project/assets/112779525/08c057e3-34fd-4b5f-89ad-f77e524ecaf7)
 
 
 ## GitLab / GitHub
