@@ -20,7 +20,7 @@ Adding some **Social Media** flair with the option to post **Stories** and a **C
 
 ### Stories
 
-![Stories](https://github.com/alipankova/SIT-final-project/assets/Stories.png)
+![Stories](assets/Stories.png)
 
 
 ### Shop Overview 
