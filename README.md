@@ -1,7 +1,7 @@
 # Final Project Full Stack Bootcamp
 
 
-Web-Experience for a Swiss NGO. **Bags-for-everyone** organizes **sewing workshops** for refugees on the greek island Lesbos.
+Web-Experience for a Swiss NGO. **Bags-for-everyone** organises **sewing workshops** for refugees on the greek island Lesbos.
 
 ## Webshop
 
@@ -85,7 +85,7 @@ Adding some **Social Media** flair with the option to post **Stories** and a **C
 
 ## GitLab / GitHub
 
-The project was developed using Docker and GitLab CI/CD. The required files are in this repository. The project is currently getting a last finish before being put to production.
+The project was developed using Docker and GitLab CI/CD. The required files are in this repository. 
 
 ## Doing some good
 If you want to support the Project until our version is live, go to bagsforeveryone's current page.
